@@ -5,7 +5,7 @@ import "../../Css/navbar.css"
 import Link from 'next/link'
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
-import { IconButton } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 
 function Navbar() {
 
@@ -13,32 +13,39 @@ function Navbar() {
     const [drawer, setDrawer] = useState(false)
 
     const navList = [
-        { id: 1, tag: "item1", link: "#" },
-        { id: 2, tag: "item2", link: "#" },
-        { id: 3, tag: "item3", link: "#" },
-        { id: 4, tag: "item4", link: "#" },
-        { id: 5, tag: "item5", link: "#" },
+        { id: 1, tag: "Home", link: "#" },
+        { id: 2, tag: "About", link: "#" },
+        { id: 3, tag: "Contact", link: "#" },
+        { id: 4, tag: "Profile", link: "#" },
+        { id: 5, tag: "Feature", link: "#" },
     ]
 
 
     return (
         <div>
-            <nav>
-                <div className='logo'><img src="next.svg" alt='logo' /></div>
+            <div className="navbar">
+                <div className='logo'><img src="logo.jpg" alt='logo' /></div>
                 <div className="hamburger-icon ">
                     <IconButton
                         color='inherit'
                         onClick={() => setDrawer(true)}
                     ><MenuIcon></MenuIcon></IconButton>
+                </div>
+                <div className="listitem">
+                    <ul>
+                        {navList.map(nav => <li key={nav.id}><Link href={nav.link}>{nav.tag}</Link></li>)}
+                    </ul>
+                </div>
+                <div className="btn">
+                    <Button variant="outlined" sx={{ color: "inherit", background: "white" }} size="small">Post</Button>
 
                 </div>
-                <ul>
-                    {navList.map(nav => <li key={nav.id}><Link href={nav.link}>{nav.tag}</Link></li>)}
-                </ul>
-            </nav>
+            </div>
+
+
             <div >
                 <Drawer
-                    anchor={"left"}
+                    anchor={"right"}
                     open={drawer}
                     onClose={() => { }}
                 >
