@@ -1,18 +1,9 @@
-/*nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 1%;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(27deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 0%, rgba(7, 139, 201, 1) 0%, rgba(18, 18, 113, 1) 42%);
-}*/
-
-/*nav a {
-    text-decoration: none;
-    color: white;
-}*/
-
 .logo {
     color: white
+}
+
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .logo img {
@@ -21,67 +12,18 @@
     border-radius: 50%;
 }
 
-/*nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-evenly;
-}*/
 
-/*nav li {
-    cursor: pointer;
-    transition: 0.25s ease-in-out;
-    padding: 0.7rem;
-    color: white;
-}*/
-
-/*li::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: white;
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-}*/
-/*
-li:hover::after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}*/
 
 
 .hamburger-icon {
     display: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 6px;
     color: white;
 }
 
 
-.drawer ul {
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-}
 
-.drawer li {
-    margin: 2px;
-    padding: 10px 1rem 10px 30px;
-    border: 2px solid black;
-    border-radius: 31px 31px 31px 31px;
-    box-shadow: -5px 9px 42px -22px rgba(0, 0, 0, 0.51);
-
-}
-
-.drawer a {
-    text-decoration: none;
-    color: black;
-}
 
 @media only screen and (max-width: 700px) {
     .hamburger-icon {
@@ -106,7 +48,7 @@ li:hover::after {
     align-items: center;
     padding: 6px;
     margin: 2px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /*font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;*/
     background: linear-gradient(27deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 0%, rgba(7, 139, 201, 1) 0%, rgba(18, 18, 113, 1) 42%);
 }
 
@@ -133,4 +75,46 @@ li:hover::after {
 
 .listitem a:hover {
     text-decoration: underline;
+}
+
+
+.drawer ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    list-style-type: none;
+}
+
+.drawer li {
+    margin: 2px;
+    padding: 10px 1rem 10px 30px;
+    border-radius: 20px 20px 20px 20px;
+    /*box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;*/
+    text-align: left;
+}
+
+.drawer li:hover {
+    background: linear-gradient(27deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 0%, rgba(7, 139, 201, 1) 0%, rgba(18, 18, 113, 1) 42%);
+    color: white;
+}
+
+.drawer a {
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.drawerhead {
+    border: 2px solid rgba(2, 0, 36, 1);
+    color: rgba(2, 0, 36, 1);
+    padding: auto;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.drawerdiv {
+    padding: 6px;
+    min-width: 50vw;
+
 }

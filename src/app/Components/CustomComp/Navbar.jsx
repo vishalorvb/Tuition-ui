@@ -19,8 +19,6 @@ function Navbar() {
         { id: 4, tag: "Profile", link: "#" },
         { id: 5, tag: "Feature", link: "#" },
     ]
-
-
     return (
         <div>
             <div className="navbar">
@@ -41,25 +39,27 @@ function Navbar() {
 
                 </div>
             </div>
-
-
             <div >
                 <Drawer
                     anchor={"right"}
                     open={drawer}
                     onClose={() => { }}
                 >
-                    <IconButton
-                        color='inherit'
-                        onClick={() => setDrawer(false)}
-                    ><CloseIcon></CloseIcon></IconButton>
+                    <div className='drawerdiv'>
+                        <div className="drawerhead">
+                            <h6><IconButton
+                                color='inherit'
+                                onClick={() => setDrawer(false)}
+                            ><CloseIcon></CloseIcon></IconButton>Welcome!</h6>
+                        </div>
 
-                    <div className='drawer'>
-                        <ul>
-                            {navList.map(nav => <li key={nav.id}><Link href={nav.link}>{nav.tag}</Link></li>)}
-                        </ul>
+
+                        <div className='drawer'>
+                            <ul>
+                                {navList.map(nav => <li key={nav.id}><Link href={nav.link}>{nav.tag}</Link></li>)}
+                            </ul>
+                        </div>
                     </div>
-
                 </Drawer>
             </div>
         </div>
