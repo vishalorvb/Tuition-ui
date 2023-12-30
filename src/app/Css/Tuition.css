@@ -6,6 +6,10 @@
     margin: auto;
 }
 
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 .head {
     margin: 2px;
 }
@@ -19,7 +23,7 @@
 }
 
 .pic {
-    background-color: rgb(33, 108, 214);
+    background-color: rgb(67, 103, 153);
     border-radius: 5px;
 }
 
@@ -45,7 +49,7 @@
 
 .tag {
     padding: 0px 4px 0px 4px;
-    background-color: rgb(224, 224, 224);
+    background-color: rgb(171, 197, 234);
     border-radius: 5px;
     display: inline-block;
     font-size: 12px;

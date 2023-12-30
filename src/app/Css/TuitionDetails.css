@@ -1,0 +1,40 @@
+.tuition-details {
+    box-shadow: 0px 10px 35px -9px rgba(0, 0, 0, 0.43);
+    border-radius: 6px;
+    padding: 4px;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.name-details {
+    padding: 0.8rem;
+}
+
+.desc-heading {
+    color: rgb(13, 68, 145);
+    padding: 3px;
+    margin: .8rem 2px .8rem 2px;
+}
+
+.full-desc {
+    color: gray;
+    padding: 3px;
+
+}
+
+.more-info {
+    margin: .5rem;
+    padding: .2rem;
+}
+
+
+
+.steper {
+    margin: 1rem;
+    padding: 1rem;
+}
+
+.contactbtn {
+    margin-bottom: 2rem;
+}

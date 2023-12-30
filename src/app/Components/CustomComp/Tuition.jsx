@@ -60,7 +60,6 @@ function Tuition() {
                             <p><IconButton size='small' color='primary'><VerifiedOutlinedIcon /></IconButton>Tuition Verified</p>
                         </Grid>
                         <Grid item xs={3} sm={3} md={3}  >
-
                             <Button variant="contained" size='small'>Contact</Button>
                         </Grid>
                     </Grid>
