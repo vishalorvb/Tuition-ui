@@ -27,11 +27,6 @@ function Tuition() {
                                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora odit rerum, ab saepe dolorem dolorum rem eius assumenda tempore expedita provident voluptas soluta, esse ipsa itaque eveniet optio. Pariatur, sint.</p>
                             </div>
                         </Grid>
-                        <Grid item xs={2} sm={2} md={2}>
-
-                            <p><VerifiedOutlinedIcon /></p>
-
-                        </Grid>
                     </Grid>
                 </div>
                 <div className="mid">
@@ -59,6 +54,18 @@ function Tuition() {
                         </Grid>
                     </Grid>
                 </div>
+                <div className="bottom">
+                    <Grid container spacing={2} justifyContent={'flex-end'} alignItems={'center'}>
+                        <Grid item xs={9} sm={9} md={9}>
+                            <p><IconButton size='small' color='primary'><VerifiedOutlinedIcon /></IconButton>Tuition Verified</p>
+                        </Grid>
+                        <Grid item xs={3} sm={3} md={3}  >
+
+                            <Button variant="contained" size='small'>Contact</Button>
+                        </Grid>
+                    </Grid>
+                </div>
+
             </div>
         </div>
     )
