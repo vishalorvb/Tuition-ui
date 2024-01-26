@@ -6,9 +6,6 @@
     margin: auto;
 }
 
-* {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
 
 .head {
     margin: 2px;
@@ -53,16 +50,11 @@
     border-radius: 5px;
     display: inline-block;
     font-size: 12px;
-
+    text-align: center;
 }
 
 .bottom {
     margin: 2px;
     padding: 2px;
     font-size: 13px;
-}
-
-.css-i4bv87-MuiSvgIcon-root {
-    /*color: green !important;*/
-    font-size: inherit !important;
 }

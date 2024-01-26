@@ -7,3 +7,11 @@
 body {
     background-color: rgba(243, 243, 243, 0.543);
 }
+
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+    font-size: inherit !important;
+}

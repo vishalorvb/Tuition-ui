@@ -1,0 +1,65 @@
+.main {
+    max-width: 390px;
+    box-shadow: 0px 10px 35px -9px rgba(0, 0, 0, 0.43);
+    border-radius: 6px;
+    padding: 4px;
+    margin: auto;
+}
+
+
+.head {
+    margin: 2px;
+}
+
+.pic img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: auto;
+    padding: 4px;
+}
+
+.pic {
+    background-color: rgb(67, 103, 153);
+    border-radius: 5px;
+}
+
+.name {
+    color: rgb(13, 68, 145);
+    padding: 3px;
+}
+
+.desc {
+    color: gray;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    padding: 3px;
+}
+
+.mid {
+    margin: 2px;
+    padding: 3px;
+    text-align: left;
+}
+
+.tag {
+    padding: 0px 4px 0px 4px;
+    background-color: rgb(171, 197, 234);
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 12px;
+
+}
+
+.bottom {
+    margin: 2px;
+    padding: 2px;
+    font-size: 13px;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+    /*color: green !important;*/
+    font-size: inherit !important;
+}

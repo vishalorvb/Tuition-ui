@@ -30,13 +30,13 @@ function TuitionDetails() {
             <div className="tuition-details">
                 <div className="name-details">
                     <Grid container spacing={2}>
-                        <Grid item xs={1} sm={1} md={1}>
+                        <Grid item xs={2} sm={1} md={1}>
                             <div className='pic'>
                                 <img src="logo.jpg" alt="" />
                             </div>
                         </Grid>
 
-                        <Grid item xs={6} sm={6} md={6}>
+                        <Grid item xs={5} sm={6} md={6}>
                             <div className='name'>
                                 <h4>Student  Name</h4>
                             </div>
