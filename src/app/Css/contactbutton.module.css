@@ -1,0 +1,12 @@
+.main {
+    display: inline-block;
+    background-color: var(--LightBlue);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.main :hover {
+    text-decoration: underline;
+    cursor: pointer;
+}

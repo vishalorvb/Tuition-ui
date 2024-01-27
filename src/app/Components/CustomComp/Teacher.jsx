@@ -5,6 +5,7 @@ import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import styles from "../../Css/teacher.module.css"
+import Smallbutton from '../MiniComp/Smallbutton';
 
 function Teacher() {
     return (
@@ -56,6 +57,7 @@ function Teacher() {
                     <Grid container spacing={2} justifyContent={'center'} alignItems={'center'}>
                         <Grid item xs={3} sm={3} md={3}  >
                             <Button variant="contained" size='small'>Contact</Button>
+                            <Smallbutton >Conatct</Smallbutton>
                         </Grid>
                     </Grid>
                 </div>

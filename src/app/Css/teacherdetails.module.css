@@ -1,0 +1,46 @@
+.pic img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 40%;
+    margin: auto;
+    padding: 4px;
+}
+
+.pic {
+    background-color: rgb(67, 103, 153);
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.section {
+    margin: 0.3rem;
+    padding: 0.3rem;
+    /*color: var(--SecondryText);*/
+}
+
+.hightlight {
+    color: var(--LightBlue);
+    margin: 0.3rem 0;
+}
+
+.text {
+    color: var(--SecondryText);
+    margin: 0.3rem 0;
+}
+
+.teacherinfo {
+
+    text-align: left;
+    margin: 0.3rem;
+    color: var(--SecondryText);
+}
+
+.mode {
+    padding: 0.3rem;
+}
+
+.test {
+    color: var(--LightBlue);
+    display: inline-block;
+    padding: 0.3rem;
+}

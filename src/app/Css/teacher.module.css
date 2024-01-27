@@ -49,8 +49,9 @@
     background-color: rgb(171, 197, 234);
     border-radius: 5px;
     display: inline-block;
-    font-size: 12px;
+    font-size: 0.7rem;
     text-align: center;
+
 }
 
 .bottom {

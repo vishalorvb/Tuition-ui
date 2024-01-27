@@ -7,7 +7,7 @@ import WifiOutlinedIcon from '@mui/icons-material/WifiOutlined';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
-import "../../Css/TuitionDetails.css"
+import styles from "../../Css/tuitiondetails.module.css"
 
 function TuitionDetails() {
 
@@ -27,53 +27,53 @@ function TuitionDetails() {
 
     return (
         <div>
-            <div className="tuition-details">
-                <div className="name-details">
+            <div className={styles["tuition-details"]}>
+                <div className={styles["name-details"]}>
                     <Grid container spacing={2}>
                         <Grid item xs={2} sm={1} md={1}>
-                            <div className='pic'>
+                            <div className={styles.pic}>
                                 <img src="logo.jpg" alt="" />
                             </div>
                         </Grid>
 
                         <Grid item xs={5} sm={6} md={6}>
-                            <div className='name'>
+                            <div className={styles.name}>
                                 <h4>Student  Name</h4>
                             </div>
-                            <div className='desc'>
+                            <div className={styles.desc}>
                                 <p>Vishal Kumar</p>
                             </div>
                         </Grid>
                         <Grid item xs={5} sm={5} md={5}>
                             <div>
-                                <p className='full-desc'>Posted Date: 22-Jan-2024</p>
+                                <p className={styles["full-desc"]}>Posted Date: 22-Jan-2024</p>
                             </div>
                             <div>
-                                <p className='full-desc'>Status : Tuition Verified<IconButton size='small' color='primary'><VerifiedOutlinedIcon /></IconButton></p>
+                                <p className={styles["full-desc"]}>Status : Tuition Verified<IconButton size='small' color='primary'><VerifiedOutlinedIcon /></IconButton></p>
                             </div>
                         </Grid>
                     </Grid>
                 </div>
                 <div >
-                    <h5 className="desc-heading">Tuition Description:</h5>
-                    <p className='full-desc'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem labore, blanditiis explicabo quo, aperiam repudiandae omnis hic aliquam voluptate itaque commodi reprehenderit officia necessitatibus cupiditate nulla cum ipsa sed placeat.</p>
+                    <h5 className={styles["desc-heading"]}>Tuition Description:</h5>
+                    <p className={styles["full-desc"]}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem labore, blanditiis explicabo quo, aperiam repudiandae omnis hic aliquam voluptate itaque commodi reprehenderit officia necessitatibus cupiditate nulla cum ipsa sed placeat.</p>
                 </div>
-                <div className="mid">
+                <div className={styles.mid}>
                     <Grid container spacing={2} alignContent={'flex-start'}>
                         <Grid item >
                             <div >
-                                <p className='tag'><IconButton size='small'><SchoolOutlinedIcon /></IconButton>10th state </p>
+                                <p className={styles.tag}><IconButton size='small'><SchoolOutlinedIcon /></IconButton>10th state </p>
                             </div>
                         </Grid>
 
                         <Grid item>
-                            <div className='tag'>
+                            <div className={styles.tag}>
                                 <p><IconButton size='small'><MenuBookIcon /></IconButton>Maths And Physics</p>
                             </div>
                         </Grid>
                     </Grid>
                 </div>
-                <div className="more-info">
+                <div className={styles["more-info"]}>
                     <p><IconButton size='small' color="primary"><LocationOnOutlinedIcon /> </IconButton>Madhapur, Hydrabad,near hitech cinema</p>
                     <Grid container spacing={2}>
                         <Grid item xs={4} sm={4} md={4}>
@@ -93,8 +93,8 @@ function TuitionDetails() {
                     </Grid>
 
                 </div>
-                <h5 className="desc-heading">Updates:</h5>
-                <div className="steper">
+                <h5 className={styles["desc-heading"]}>Updates:</h5>
+                <div className={styles.steper}>
                     <Box sx={{ maxWidth: 400 }}>
                         <Stepper orientation="vertical">
                             {steps.map((step, index) => (
@@ -112,7 +112,7 @@ function TuitionDetails() {
                         </Stepper>
                     </Box>
                 </div>
-                <div className="contactbtn">
+                <div className={styles.contactbtn}>
                     <Grid container spacing={2} justifyContent={"center"} alignItems={"center"}>
                         <Grid item >
                             <Button variant="contained">View Contact</Button>

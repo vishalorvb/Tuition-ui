@@ -1,3 +1,12 @@
+:root {
+    /*--Dark: rgb(13, 27, 73);*/
+    --DarkBlue: rgba(2, 0, 36, 1);
+    --LightBlue: rgba(7, 139, 201, 1);
+    --Light: rgb(120, 16, 14);
+    --Fade: rgba(13, 27, 73, 0.155);
+    --SecondryText: rgb(72, 73, 74);
+}
+
 * {
     padding: 0;
     margin: 0;

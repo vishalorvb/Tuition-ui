@@ -1,0 +1,10 @@
+.main {
+    text-align: center;
+    color: rgb(55, 57, 57);
+    display: inline-block;
+    background-color: rgb(209, 211, 214);
+    padding: 4px;
+    border-radius: 6px;
+    letter-spacing: 0.03rem;
+    margin: 2px;
+}

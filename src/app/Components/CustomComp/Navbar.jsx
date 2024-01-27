@@ -6,6 +6,7 @@ import Link from 'next/link'
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button, IconButton } from '@mui/material';
+import { Drawer } from '@mui/material'
 
 function Navbar() {
 
@@ -67,6 +68,6 @@ function Navbar() {
 
     )
 }
-import { Drawer } from '@mui/material'
+
 
 export default Navbar
