@@ -36,7 +36,7 @@ function Navbar() {
                     </ul>
                 </div>
                 <div className="btn">
-                    <Button variant="outlined" sx={{ color: "inherit", background: "white" }} size="small">Post</Button>
+                    <Button variant="outlined" sx={{ color: "inherit", background: "white" }} size="small">Book Free Demo</Button>
 
                 </div>
             </div>

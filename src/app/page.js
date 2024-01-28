@@ -5,14 +5,12 @@ import Tuition from './Components/CustomComp/Tuition'
 import TuitionDetails from './Components/CustomComp/TuitionDetails'
 import Teacher from './Components/CustomComp/Teacher'
 import TeacherDetails from './Components/CustomComp/TeacherDetails'
+import PostTuition from './Components/CustomComp/PostTuition'
 export default function Home() {
     return (
         <main >
             <Navbar></Navbar>
-            {/*<Tuition></Tuition>*/}
-            {/*<Teacher></Teacher>*/}
-            {/*<TuitionDetails></TuitionDetails>*/}
-            <TeacherDetails></TeacherDetails>
+            <PostTuition />
         </main>
     )
 }

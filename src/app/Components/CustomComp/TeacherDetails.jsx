@@ -40,7 +40,7 @@ function TeacherDetails() {
             </div>
             <div className={styles.section}>
                 <Grid container columnSpacing={2}>
-                    <Grid item md={3} xs={3}>
+                    <Grid item md={3} xs={4}>
                         <div className={styles.mode}>
                             <h5 className={styles.test}><WifiOutlinedIcon /></h5>
                             <h5 className={styles.test}><WifiOffOutlinedIcon /></h5>
