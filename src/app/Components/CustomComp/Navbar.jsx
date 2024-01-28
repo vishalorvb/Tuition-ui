@@ -14,11 +14,15 @@ function Navbar() {
     const [drawer, setDrawer] = useState(false)
 
     const navList = [
-        { id: 1, tag: "Home", link: "#" },
-        { id: 2, tag: "About", link: "#" },
-        { id: 3, tag: "Contact", link: "#" },
-        { id: 4, tag: "Profile", link: "#" },
-        { id: 5, tag: "Feature", link: "#" },
+        { id: 1, tag: "Home", link: "/" },
+        { id: 2, tag: "Tuition", link: "/teacher-job" },
+        { id: 3, tag: "Teacher", link: "/teacher" },
+        { id: 4, tag: "Login", link: "/login" },
+        { id: 5, tag: "Logout", link: "/logout" },
+        { id: 6, tag: "Registration", link: "/registration" },
+
+        { id: 7, tag: "Profile", link: "#" },
+
     ]
     return (
         <div>

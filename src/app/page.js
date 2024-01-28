@@ -6,11 +6,11 @@ import TuitionDetails from './Components/CustomComp/TuitionDetails'
 import Teacher from './Components/CustomComp/Teacher'
 import TeacherDetails from './Components/CustomComp/TeacherDetails'
 import PostTuition from './Components/CustomComp/PostTuition'
+import Footer from './Components/CustomComp/Footer'
 export default function Home() {
     return (
         <main >
-            <Navbar></Navbar>
-            <PostTuition />
+            Home page
         </main>
     )
 }

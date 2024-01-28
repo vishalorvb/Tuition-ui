@@ -44,6 +44,13 @@ textarea {
     outline: none;
 }
 
+input[type="checkbox"] {
+    width: auto;
+    display: inline;
+
+
+}
+
 textarea:focus,
 input:focus {
     outline: 1.5px solid var(--LightBlue);
