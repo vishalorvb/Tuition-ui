@@ -1,0 +1,11 @@
+.test {
+    padding: 20px;
+}
+
+.heading {
+
+    text-align: center;
+    padding: 1rem;
+    color: var(--DarkBlue);
+    text-decoration: underline;
+}
