@@ -21,7 +21,7 @@ function Navbar() {
         { id: 5, tag: "Logout", link: "/logout" },
         { id: 6, tag: "Registration", link: "/registration" },
 
-        { id: 7, tag: "Profile", link: "#" },
+        { id: 7, tag: "Profile", link: "/profile" },
 
     ]
     return (
