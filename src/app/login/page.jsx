@@ -1,9 +1,10 @@
 import React from 'react'
+import Login from '../Components/PageComp/Login'
 
 function page() {
     return (
         <div>
-            login page
+            <Login></Login>
         </div>
     )
 }
