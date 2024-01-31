@@ -14,11 +14,10 @@ function Navbar() {
 
     const [drawer, setDrawer] = useState(false)
     let { status } = useSession()
-    console.log(status)
     const navList = [
         { id: 1, tag: "Home", link: "/", open: 1 },
-        { id: 2, tag: "Tuition", link: "/teacher-job", open: 1 },
-        { id: 3, tag: "Teacher", link: "/teacher", open: 1 },
+        //{ id: 2, tag: "Tuition", link: "/teacher-job", open: 1 },
+        //{ id: 3, tag: "Teacher", link: "/teacher", open: 1 },
         { id: 4, tag: "Login", link: "/login", open: 3 },
         { id: 5, tag: "Logout", link: "/logout", open: 2 },
         { id: 6, tag: "Registration", link: "/registration", open: 3 },
@@ -27,12 +26,7 @@ function Navbar() {
 
     ]
 
-    let temp = navList.filter(nav => {
-        if (nav.open == 1) return true
-        if (nav.open == 2 && status == "authenticated") return true
-        if (nav.open == 3 && status == "unauthenticated") return true
-    })
-    console.log(temp)
+
     return (
         <div>
             <div className="navbar">

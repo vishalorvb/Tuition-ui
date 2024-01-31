@@ -6,46 +6,20 @@ import FormPage from "../CustomComp/FormPage"
 import Link from "next/link"
 import { useRouter } from "next/navigation";
 import useGlobal from "../Hooks/useGlobal";
-import { useRef, useState } from "react"
+import { useState } from "react"
 import { getotp, login } from "@/app/Api"
-import { signIn, signOut } from "next-auth/react"
+import { signIn } from "next-auth/react"
+import VerifyOtp from "../CustomComp/VerifyOtp"
 
 function Login() {
     const { setSnackbarData } = useGlobal();
 
     const [phone_number, setPhoneNumber] = useState()
     const [sendOtp, setSendOtp] = useState(false)
-    const [otp, setOtp] = useState()
-    const router = useRouter()
 
-    function handleSignin(data) {
-        if (data.Full_name != undefined && data.access != undefined && data.refresh != undefined && data.roleId != undefined) {
-            signIn('credentials', data)
-        }
 
-    }
 
-    function handleLogin(e) {
-        e.preventDefault()
-        let data = { "username": phone_number, "password": otp }
-        login(data).then(res => {
-            if (res.opration) {
-                handleSignin(res.info)
-                setSnackbarData({
-                    status: true,
-                    message: res.message,
-                    severity: "success",
-                })
-            }
-            else {
-                setSnackbarData({
-                    status: true,
-                    message: res.message,
-                    severity: "error",
-                })
-            }
-        })
-    }
+
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -73,8 +47,8 @@ function Login() {
         <div>
             <Grid container justifyContent="center">
                 <Grid item md={10} sx={10}>
-                    <FormPage>
-                        {sendOtp == false && <div className="form">
+                    {sendOtp == false && <FormPage>
+                        <div className="form">
                             <form onSubmit={e => handleSubmit(e)} >
                                 <h1 className={styles.heading}>Login</h1>
                                 <label >Phone Number:</label>
@@ -85,20 +59,9 @@ function Login() {
                                     type="submit" value="GET OTP"></input>
                                 <p>Not a member? <Link href="/registration">Register</Link> </p>
                             </form>
-                        </div>}
-
-                        {sendOtp && <div className="form">
-                            <form onSubmit={e => handleLogin(e)} >
-                                <h1 className={styles.heading}>Verify</h1>
-                                <label >Enter otp:</label>
-                                <input
-                                    onChange={e => setOtp(e.target.value)}
-                                    type="tel" name="otp" placeholder="Enter otp" required />
-                                <input
-                                    type="submit" value="Verify"></input>
-                            </form>
-                        </div>}
-                    </FormPage>
+                        </div>
+                    </FormPage>}
+                    {sendOtp && <VerifyOtp phone_number={phone_number}></VerifyOtp>}
                 </Grid>
             </Grid>
         </div>

@@ -4,16 +4,17 @@ import FormPage from "../CustomComp/FormPage"
 import styles from "../../Css/form.module.css"
 import Link from "next/link"
 import useGlobal from "../Hooks/useGlobal"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { createUser } from "@/app/Api"
 import { useRouter } from 'next/navigation'
+import VerifyOtp from "../CustomComp/VerifyOtp"
 function Register() {
 
     const { setSnackbarData } = useGlobal();
     const f = useRef()
-    const router = useRouter()
+    const [phone_number, setPhoneNumber] = useState()
+    const [otp, setOtp] = useState(false)
     function handleSubmit(e) {
-
         e.preventDefault()
         let data = new FormData(f.current)
         data = Object.fromEntries(data)
@@ -25,9 +26,8 @@ function Register() {
                     message: res.message,
                     severity: "success",
                 })
-                setTimeout(() => {
-                    router.push('/profile')
-                }, 1000);
+                setPhoneNumber(data.phone_number)
+                setOtp(true)
             }
             else {
                 setSnackbarData({
@@ -43,7 +43,7 @@ function Register() {
         <div>
             <Grid container justifyContent="center">
                 <Grid item md={10} sx={10}>
-                    <FormPage>
+                    {otp == false && <FormPage>
                         <div className="form">
                             <h1 className={styles.heading}>Registration</h1>
                             <form action="/" method="post" onSubmit={handleSubmit} ref={f}>
@@ -62,7 +62,8 @@ function Register() {
                                 <p>Already have an account ? <Link href="/login">Login</Link> </p>
                             </form>
                         </div>
-                    </FormPage>
+                    </FormPage>}
+                    {otp && <VerifyOtp phone_number={phone_number}></VerifyOtp>}
                 </Grid>
             </Grid>
         </div>

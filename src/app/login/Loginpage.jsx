@@ -14,7 +14,9 @@ function Loginpage() {
             {status == "unauthenticated" && <div>
                 <Login></Login>
             </div>}
-            login page
+            {status == "authenticated" && <div>
+                Already LoggedIn
+            </div>}
         </div>
     )
 }
