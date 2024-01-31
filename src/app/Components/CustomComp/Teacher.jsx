@@ -1,8 +1,6 @@
 import { Button, Grid, IconButton } from '@mui/material'
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
-import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import styles from "../../Css/teacher.module.css"
 import Smallbutton from '../MiniComp/Smallbutton';

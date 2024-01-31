@@ -3,7 +3,7 @@ import { Alert, Snackbar } from '@mui/material'
 import React from 'react'
 import useGlobal from '../Hooks/useGlobal';
 
-function GloabalSnackBar() {
+function GlobalSnackBar() {
     const { snackbarData, setSnackbarData } = useGlobal();
     const severity = snackbarData?.severity?.toLowerCase();
     const handleClose = () => {
@@ -25,4 +25,4 @@ function GloabalSnackBar() {
     )
 }
 
-export default GloabalSnackBar
+export default GlobalSnackBar

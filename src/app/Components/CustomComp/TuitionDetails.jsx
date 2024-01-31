@@ -5,7 +5,6 @@ import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import MoneyOutlinedIcon from '@mui/icons-material/MoneyOutlined';
 import WifiOutlinedIcon from '@mui/icons-material/WifiOutlined';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import styles from "../../Css/tuitiondetails.module.css"
 

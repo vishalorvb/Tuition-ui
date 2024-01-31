@@ -6,7 +6,7 @@ function FormPage({ children }) {
     return (
         <div>
             <Grid container justifyContent="center">
-                <Grid item md={5} xs={0} sx={{ backgroundImage: `url(${backgroundImageUrl})`, backgroundSize: "contain", backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                <Grid item md={5} xs={0} sx={{ backgroundImage: `url(${backgroundImageUrl})`, backgroundSize: "cover", backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
 
 
                 </Grid>

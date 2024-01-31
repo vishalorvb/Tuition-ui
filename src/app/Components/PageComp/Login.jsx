@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import useGlobal from "../Hooks/useGlobal";
 import { useRef, useState } from "react"
 import { getotp, login } from "@/app/Api"
+import { signIn, signOut } from "next-auth/react"
 
 function Login() {
     const { setSnackbarData } = useGlobal();
@@ -17,12 +18,19 @@ function Login() {
     const [otp, setOtp] = useState()
     const router = useRouter()
 
+    function handleSignin(data) {
+        if (data.Full_name != undefined && data.access != undefined && data.refresh != undefined && data.roleId != undefined) {
+            signIn('credentials', data)
+        }
+
+    }
+
     function handleLogin(e) {
         e.preventDefault()
         let data = { "username": phone_number, "password": otp }
         login(data).then(res => {
-            console.log(res)
             if (res.opration) {
+                handleSignin(res.info)
                 setSnackbarData({
                     status: true,
                     message: res.message,
@@ -43,7 +51,6 @@ function Login() {
         e.preventDefault()
         let data = { "phone_number": phone_number }
         getotp(data).then(res => {
-            console.log(res)
             if (res.opration) {
                 setSnackbarData({
                     status: true,
@@ -61,13 +68,14 @@ function Login() {
             }
         })
     }
+
     return (
         <div>
             <Grid container justifyContent="center">
                 <Grid item md={10} sx={10}>
                     <FormPage>
                         {sendOtp == false && <div className="form">
-                            <form onSubmit={handleSubmit} >
+                            <form onSubmit={e => handleSubmit(e)} >
                                 <h1 className={styles.heading}>Login</h1>
                                 <label >Phone Number:</label>
                                 <input
@@ -80,7 +88,7 @@ function Login() {
                         </div>}
 
                         {sendOtp && <div className="form">
-                            <form onSubmit={handleLogin} >
+                            <form onSubmit={e => handleLogin(e)} >
                                 <h1 className={styles.heading}>Verify</h1>
                                 <label >Enter otp:</label>
                                 <input

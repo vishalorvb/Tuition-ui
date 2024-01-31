@@ -3,8 +3,8 @@ import './globals.css'
 import Navbar from './Components/CustomComp/Navbar'
 import Footer from './Components/CustomComp/Footer'
 import GlobalContextProvider from './Components/Context/GlobalContextProvider'
-import GloabalSnackBar from './Components/CustomComp/GloabalSnackBar'
-
+import GlobalSnackBar from './Components/CustomComp/GloabalSnackBar'
+import NextAuthSessionProvider from './Components/Context/NextAuthSessionProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
@@ -18,10 +18,12 @@ export default function RootLayout({ children }) {
 
             <body className={inter.className}>
                 <GlobalContextProvider>
-                    <Navbar></Navbar>
-                    {children}
-                    <Footer></Footer>
-                    <GloabalSnackBar></GloabalSnackBar>
+                    <NextAuthSessionProvider>
+                        <Navbar></Navbar>
+                        {children}
+                        <Footer></Footer>
+                        <GlobalSnackBar></GlobalSnackBar>
+                    </NextAuthSessionProvider>
                 </GlobalContextProvider>
 
             </body>
