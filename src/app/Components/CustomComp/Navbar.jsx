@@ -14,6 +14,8 @@ function Navbar() {
 
     const [drawer, setDrawer] = useState(false)
     let { status } = useSession()
+    let data = useSession()
+    console.log(data)
     const navList = [
         { id: 1, tag: "Home", link: "/", open: 1 },
         //{ id: 2, tag: "Tuition", link: "/teacher-job", open: 1 },
