@@ -7,10 +7,11 @@ import Teacher from './Components/CustomComp/Teacher'
 import TeacherDetails from './Components/CustomComp/TeacherDetails'
 import PostTuition from './Components/CustomComp/PostTuition'
 import Footer from './Components/CustomComp/Footer'
-export default function Home() {
+import Home from './Components/PageComp/Home/Home'
+export default function page() {
     return (
         <main >
-            Home page
+            <Home></Home>
         </main>
     )
 }

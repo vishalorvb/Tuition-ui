@@ -1,0 +1,10 @@
+.main {
+    display: inline;
+    border: 3px solid white;
+    color: white;
+    padding: 1rem;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
