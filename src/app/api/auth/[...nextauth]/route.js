@@ -8,30 +8,37 @@ const authOptions = {
             name: 'Credentials',
             credentials: {},
             async authorize(credentials) {
-                const user = { id: 1, name: "vishal", password: "kumar", role: "admin", email: "vishal@gmail.com" };
+                let user = { name: credentials.Full_name, refresh: credentials.refresh, access: credentials.access, role: credentials.roleId }
                 return user
             }
         })
     ],
 
     callbacks: {
-        async signIn({ credentials }) {
+        async signIn({ user, account, profile, email, credentials }) {
             return true
         },
         async jwt({ token, user, account, profile, isNewUser }) {
-            console.log("jwt user", user)
-            console.log(token)
-            return token
-        },
 
+            if (user) {
+                token.access_token = user.access
+                token.refresh_token = user.refresh
+                token.name = user.name
+                token.role = user.role
+            }
+            return token
+
+
+        },
+        async session({ session, token, user }) {
+            console.log("session")
+            console.log(token)
+            return session
+        },
         async redirect({ url, baseUrl }) {
             return "/profile"
         },
-        async session({ session, token, user }) {
 
-            //console.log("session ", session)
-            return session
-        },
 
     }
 
