@@ -25,7 +25,7 @@ function Navbar() {
         { id: 6, tag: "Registration", link: "/registration", open: 3 },
 
         { id: 7, tag: "Profile", link: "/profile", open: 2 },
-
+        { id: 8, tag: "Join", link: "/join_teacher", open: 1 },
     ]
 
 

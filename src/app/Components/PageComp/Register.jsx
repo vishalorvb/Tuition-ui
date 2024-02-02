@@ -6,7 +6,6 @@ import Link from "next/link"
 import useGlobal from "../Hooks/useGlobal"
 import { useRef, useState } from "react"
 import { createUser } from "@/app/Api"
-import { useRouter } from 'next/navigation'
 import VerifyOtp from "../CustomComp/VerifyOtp"
 function Register() {
 

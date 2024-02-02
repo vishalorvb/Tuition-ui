@@ -40,3 +40,11 @@ export async function login(data) {
         return { opration: false, message: err.response.data.message }
     })
 }
+
+
+export async function getPin(pin) {
+    return await axios.get(`${baseUrl}/getPincode?pincode=${pin}`).then(res => {
+        return res.data
+    }).catch(err => console.log(err))
+
+}
