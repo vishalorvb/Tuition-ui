@@ -1,23 +1,39 @@
 import { Autocomplete, Grid, TextField } from '@mui/material'
 import styles from "../Css/form.module.css"
 import { useEffect, useRef, useState } from 'react'
-import { getPin } from '../Api'
+import { createTeacher, getPin } from '../Api'
+import { useSession } from 'next-auth/react'
+import { useRouter } from "next/navigation"
+import useGlobal from '../Components/Hooks/useGlobal'
 
 function BecomeTeacher() {
 
+    const { data } = useSession()
+    const { setSnackbarData } = useGlobal();
+    const router = useRouter()
 
     const f = useRef()
     const [pincode, setPincode] = useState([])
     const [selectedpin, setSelectedPin] = useState(0)
     function handleSubmit(e) {
+        console.log("===========")
         e.preventDefault()
-        let data = new FormData(f.current)
-        data = Object.fromEntries(data)
-        console.log(data)
+        let payload = new FormData(f.current)
+        payload = Object.fromEntries(payload)
+        createTeacher(payload, data.access_token).then(res => {
+            if (res.opration) {
+                setSnackbarData({
+                    status: true,
+                    message: res.message,
+                    severity: "success",
+                })
+                router.push("/")
+            }
+        })
     }
 
     function fetchPin(pin) {
-        console.log(pin)
+
         if (pin.length >= 3) {
             getPin(pin).then(res => {
                 setPincode(res)
@@ -25,9 +41,6 @@ function BecomeTeacher() {
         }
     }
 
-    useEffect(() => {
-        getPin(7111)
-    }, [])
 
     return (
         <div>
@@ -79,7 +92,7 @@ function BecomeTeacher() {
                                 options={pincode}
                                 value={selectedpin}
                                 fullWidth
-                                getOptionLabel={(option) => option.Pincode ?? ""}
+                                getOptionLabel={(option) => option.Pincode}
                                 onChange={(e, value) => {
                                     setSelectedPin(value);
                                 }}
