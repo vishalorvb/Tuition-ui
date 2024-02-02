@@ -1,7 +1,7 @@
 
 'use client'
 import React, { useState } from 'react'
-import "../../Css/navbar.css"
+import styles from "../../Css/navbar.module.css"
 import Link from 'next/link'
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -31,15 +31,15 @@ function Navbar() {
 
     return (
         <div>
-            <div className="navbar">
-                <div className='logo'><img src="logo.jpg" alt='logo' /></div>
-                <div className="hamburger-icon ">
+            <div className={styles.navbar}>
+                <div className={styles.logo}><img src="logo.jpg" alt='logo' /></div>
+                <div className={styles["hamburger-icon"]}>
                     <IconButton
                         color='inherit'
                         onClick={() => setDrawer(true)}
                     ><MenuIcon></MenuIcon></IconButton>
                 </div>
-                <div className="listitem">
+                <div className={styles.listitem}>
                     <ul>
                         {navList.filter(nav => {
                             if (nav.open == 1) return true
@@ -48,7 +48,7 @@ function Navbar() {
                         }).map(nav => <li key={nav.id}><Link href={nav.link}>{nav.tag}</Link></li>)}
                     </ul>
                 </div>
-                <div className="btn">
+                <div className={styles.btn}>
                     <Button variant="outlined" sx={{ color: "inherit", background: "white" }} size="small">Book Free Demo</Button>
 
                 </div>
@@ -59,8 +59,8 @@ function Navbar() {
                     open={drawer}
                     onClose={() => { }}
                 >
-                    <div className='drawerdiv'>
-                        <div className="drawerhead">
+                    <div className={styles.drawerdiv}>
+                        <div className={styles.drawerhead}>
                             <h6><IconButton
                                 color='inherit'
                                 onClick={() => setDrawer(false)}
@@ -68,7 +68,7 @@ function Navbar() {
                         </div>
 
 
-                        <div className='drawer'>
+                        <div className={styles.drawer}>
                             <ul>
                                 {navList.filter(nav => {
                                     if (nav.open == 1) return true
