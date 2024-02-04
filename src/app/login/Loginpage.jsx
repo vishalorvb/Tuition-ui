@@ -5,7 +5,6 @@ import Login from "../Components/PageComp/Login"
 function Loginpage() {
 
     let { status } = useSession()
-    console.log(status)
     return (
         <div>
             {status == "loading" && <div>

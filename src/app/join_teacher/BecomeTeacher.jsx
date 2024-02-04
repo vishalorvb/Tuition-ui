@@ -1,3 +1,4 @@
+"use client"
 import { Autocomplete, Grid, TextField } from '@mui/material'
 import styles from "../Css/form.module.css"
 import { useEffect, useRef, useState } from 'react'
@@ -16,7 +17,6 @@ function BecomeTeacher() {
     const [pincode, setPincode] = useState([])
     const [selectedpin, setSelectedPin] = useState(0)
     function handleSubmit(e) {
-        console.log("===========")
         e.preventDefault()
         let payload = new FormData(f.current)
         payload = Object.fromEntries(payload)
@@ -92,7 +92,7 @@ function BecomeTeacher() {
                                 options={pincode}
                                 value={selectedpin}
                                 fullWidth
-                                getOptionLabel={(option) => option.Pincode}
+                                getOptionLabel={(option) => option.Pincode?.toString() ?? ""}
                                 onChange={(e, value) => {
                                     setSelectedPin(value);
                                 }}
