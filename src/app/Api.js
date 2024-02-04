@@ -50,11 +50,26 @@ export async function getPin(pin) {
 }
 
 export async function createTeacher(data, token) {
-    console.log("Api called")
     return await axios({
         method: 'post',
         data: data,
         url: `${baseUrl}/teacher/create_teacher`,
+        headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": 'application/json',
+        }
+    }).then(res => {
+        return { opration: true, message: res.data.message }
+    }).catch(err => {
+        return { opration: false, message: "Failed" }
+    })
+}
+
+export async function postTuition(data, token) {
+    return await axios({
+        method: 'post',
+        data: data,
+        url: `${baseUrl}/tuition/createTuition`,
         headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": 'application/json',

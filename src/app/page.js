@@ -5,7 +5,7 @@ import Tuition from './Components/CustomComp/Tuition'
 import TuitionDetails from './Components/CustomComp/TuitionDetails'
 import Teacher from './Components/CustomComp/Teacher'
 import TeacherDetails from './Components/CustomComp/TeacherDetails'
-import PostTuition from './Components/CustomComp/PostTuition'
+import PostTuition from './home-tuition/PostTuition'
 import Footer from './Components/CustomComp/Footer'
 import Home from './Components/PageComp/Home/Home'
 export default function page() {

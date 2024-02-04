@@ -16,6 +16,7 @@ function BecomeTeacher() {
     const f = useRef()
     const [pincode, setPincode] = useState([])
     const [selectedpin, setSelectedPin] = useState(0)
+
     function handleSubmit(e) {
         e.preventDefault()
         let payload = new FormData(f.current)
@@ -88,7 +89,7 @@ function BecomeTeacher() {
 
                             <label>Pincode:</label>
                             <Autocomplete
-                                id="project_id"
+                                id="pincode"
                                 options={pincode}
                                 value={selectedpin}
                                 fullWidth
