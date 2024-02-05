@@ -27,7 +27,7 @@ function Navbar() {
         { id: 3, tag: "Teacher", link: "/teacher", open: 1 },
         { id: 4, tag: "Login", link: "/login", open: 3 },
         { id: 5, tag: "Logout", link: "/logout", open: 2 },
-        { id: 6, tag: "Registration", link: "/registration", open: 1 },
+        { id: 6, tag: "Registration", link: "/registration", open: 3 },
         { id: 9, tag: "Post Tuition", link: "/home-tuition", open: 1 },
 
         { id: 7, tag: "Profile", link: "/profile", open: 2 },

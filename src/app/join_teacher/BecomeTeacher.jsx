@@ -16,6 +16,7 @@ function BecomeTeacher() {
     const f = useRef()
     const [pincode, setPincode] = useState([])
     const [selectedpin, setSelectedPin] = useState(0)
+    const [online, setOnline] = useState(true)
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -51,37 +52,37 @@ function BecomeTeacher() {
                     <div className="form">
                         <h1 className={styles.heading}>Join </h1>
                         <form action="/" method="post" onSubmit={handleSubmit} ref={f}>
-                            <label >Name:</label>
+                            <label >Name:<span className="req">*</span></label>
                             <input type="text" name="teacher_name" placeholder="Your Full Name" required />
 
-                            <label > Gender:</label>
+                            <label > Gender:<span className="req">*</span></label>
                             <label className={styles.inlinelable}> Male:</label>
                             <input type="radio" name="gender" value="male" />
                             <label className={styles.inlinelable} > Female:</label>
                             <input type="radio" name="gender" value="female" />
 
-                            <label >Experience:</label>
+                            <label >Experience:<span className="req">*</span></label>
                             <input type="number" name="experience" pattern="[0-9]" placeholder="Experience in Year" required />
 
-                            <label >Location:</label>
+                            <label >Location:<span className="req">*</span></label>
                             <input type="text" name="location" placeholder="Location" required />
 
-                            <label >Qualification:</label>
+                            <label >Qualification:<span className="req">*</span></label>
                             <input type="text" name="qualification" placeholder="Ex-B.Tech in computer science" required />
 
-                            <label >Subject:</label>
+                            <label >Subject:<span className="req">*</span></label>
                             <input type="text" name="subject" placeholder="Ex-Maths,English,Physics etc" required />
 
-                            <label >Standard:</label>
+                            <label >Standard:<span className="req">*</span></label>
                             <input type="text" name="classes" placeholder="Ex-CBSE, IIT, NEET, State Board" required />
 
                             <label > Mode of teaching:</label>
                             <label className={styles.inlinelable}> Online:</label>
-                            <input type="radio" name="mode" value="online" />
+                            <input onChange={e => setOnline(true)} type="radio" name="mode" value="online" />
                             <label className={styles.inlinelable}  > Offline:</label>
-                            <input type="radio" name="mode" value="offline" />
+                            <input onChange={e => setOnline(false)} type="radio" name="mode" value="offline" />
                             <label className={styles.inlinelable} > Both:</label>
-                            <input type="radio" name="mode" value="both" />
+                            <input onChange={e => setOnline(true)} type="radio" name="mode" value="both" />
 
 
                             <label >Age:</label>
@@ -90,6 +91,7 @@ function BecomeTeacher() {
                             <label>Pincode:</label>
                             <Autocomplete
                                 id="pincode"
+                                disabled={!online}
                                 options={pincode}
                                 value={selectedpin}
                                 fullWidth

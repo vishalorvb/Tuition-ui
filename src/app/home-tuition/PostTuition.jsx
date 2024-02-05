@@ -12,6 +12,8 @@ function PostTuition() {
 
     const [pincode, setPincode] = useState([])
     const [selectedpin, setSelectedPin] = useState(0)
+    const [online, setOnline] = useState(true)
+
     const { data } = useSession()
     const { setSnackbarData } = useGlobal();
     const router = useRouter()
@@ -51,38 +53,39 @@ function PostTuition() {
                         <div className="form">
                             <h1 className={styles.heading}>Post your requiment</h1>
                             <form onSubmit={handleSubmit} ref={f}>
-                                <label >Student Name:</label>
+                                <label >Student Name:<span className="req">*</span></label>
                                 <input type="text" name="student_name" placeholder="Student Name" required />
 
-                                <label >Student Phone Number:</label>
+                                <label >Student Phone Number:<span className="req">*</span></label>
                                 <input type="tel" id="phoneNumber" name="student_phone_number" pattern="[0-9]{10}" placeholder="10 Digit Phone Number" required />
 
-                                <label >Course:</label>
+                                <label >Course:<span className="req">*</span></label>
                                 <input type="text" name="course" placeholder="Ex:CBSE, Engineering, IIT, NEET" required />
 
-                                <label >Subject:</label>
+                                <label >Subject:<span className="req">*</span></label>
                                 <input type="text" name="subject" placeholder="Maths, Physics etc" required />
 
-                                <label >Description:</label>
+                                <label >Description:<span className="req">*</span></label>
                                 <input type="text" name="description" placeholder="Description" required />
 
-                                <label >Fee:</label>
+                                <label >Fee:<span className="req">*</span></label>
                                 <input type="number" name="fee" pattern="[0-9]" placeholder="Fee/hour" required />
 
-                                <label > Mode of teaching:</label>
-                                <label className={styles.inlinelable}> Online:</label>
-                                <input type="radio" name="mode" value="online" />
+                                <label > Mode of teaching:<span className="req">*</span></label>
+                                <label className={styles.inlinelable} > Online:</label>
+                                <input onChange={e => setOnline(true)} type="radio" name="mode" value="online" />
                                 <label className={styles.inlinelable}  > Offline:</label>
-                                <input type="radio" name="mode" value="offline" />
+                                <input onChange={e => setOnline(false)} type="radio" name="mode" value="offline" />
                                 <label className={styles.inlinelable} > Both:</label>
-                                <input type="radio" name="mode" value="both" />
-
+                                <input onChange={e => setOnline(true)} type="radio" name="mode" value="both" defaultChecked />
                                 <label>Pincode:</label>
                                 <Autocomplete
+                                    disabled={!online}
                                     id="pincode"
                                     options={pincode}
                                     value={selectedpin}
                                     fullWidth
+                                    defaultValue={0}
                                     getOptionLabel={(option) => option.Pincode?.toString() ?? ""}
                                     onChange={(e, value) => {
                                         setSelectedPin(value);
@@ -92,20 +95,16 @@ function PostTuition() {
                                     }}
                                     renderInput={(params) => (
                                         <div ref={params.InputProps.ref}>
-                                            <input name='pincode' type="text" {...params.inputProps} placeholder='Enter Atleast 3 Digit' />
+                                            <input name='pincode' type="text" {...params.inputProps} placeholder='Enter Atleast 3 Digit' defaultValue="0" />
                                         </div>
                                     )}
                                 />
-
                                 <label >Locality:</label>
-                                <input name="locality" placeholder="locality" />
+                                <input disabled={!online} name="locality" placeholder="locality" />
                                 <input type="submit" value="Submit"></input>
                             </form>
-
                         </div>
-
                     </FormPage>
-
                 </Grid>
             </Grid>
         </div>
