@@ -1,6 +1,7 @@
 import React from 'react'
 import Profile from './Profile'
 import  Card  from "../Components/CustomComp/Card"
+import PostTable from '../Components/CustomComp/PostTable'
 
 function page() {
     return (
@@ -17,6 +18,7 @@ function page() {
             data="10"
             heading="Credit point"
             ></Card>
+            <PostTable></PostTable>
         </div>
     )
 }

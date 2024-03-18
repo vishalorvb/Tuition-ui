@@ -1,0 +1,16 @@
+.table {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.table td {
+    padding: 8px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tableheading{
+    border: 2px solid var(--DarkBlue);
+    border-radius: 5px;
+    color: var(--DarkBlue);
+}
