@@ -2,7 +2,8 @@
 import styles from "../../Css/Table.module.css"
 import Smallbutton from "../MiniComp/Smallbutton"
 
-function PostTable() {
+
+function TuitionUnlockTable() {
     return (
         <div>
             <div className={styles.tabledata}>
@@ -38,4 +39,4 @@ function PostTable() {
     )
 }
 
-export default PostTable
+export default TuitionUnlockTable

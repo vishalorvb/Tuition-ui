@@ -7,18 +7,21 @@
     text-align: center;
     position: relative;
 }
+
 .edit_link {
     position: absolute;
     top: 10px;
     right: 10px;
     color: #3498db;
     font-size: 20px;
-    text-decoration: none;
+    text-decoration: underline;
     transition: color 0.3s ease-in-out;
 }
+
 .edit_link:hover {
     color: #2980b9;
 }
+
 .userinfo img {
     width: 100px;
     height: 100px;
@@ -26,11 +29,13 @@
     object-fit: cover;
     margin: 0 auto 15px;
 }
+
 .table {
     width: 100%;
     margin-bottom: 15px;
     text-align: left;
 }
+
 .table td {
     padding: 8px 0;
     font-size: 14px;

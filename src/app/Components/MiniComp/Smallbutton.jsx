@@ -1,12 +1,14 @@
+'use client'
+
 import styles from '../../Css/smallbutton.module.css'
 
-function Smallbutton({ title, children, events }) {
+function Smallbutton({ children, ...props }) {
     return (
-        <div>
-            <div className={styles.main}>
-                {children}
-            </div>
+
+        <div className={styles.main} {...props}>
+            {children}
         </div>
+
     )
 }
 

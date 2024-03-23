@@ -1,1 +1,10 @@
-.main {}
+.main {
+    background-color: var(--DarkBlue);
+    display: inline;
+    color: white;
+    padding: 6px;
+    margin: 4px;
+    border-radius: 5px;
+    text-decoration: underline;
+    cursor: pointer;
+}

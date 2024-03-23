@@ -2,7 +2,7 @@
 import styles from "../../Css/Table.module.css"
 import Smallbutton from "../MiniComp/Smallbutton"
 
-function PostTable() {
+function TeacherUnlockTable() {
     return (
         <div>
             <div className={styles.tabledata}>
@@ -13,6 +13,7 @@ function PostTable() {
                     <table className={styles.table}>
                         <thead>
                             <tr>
+                                <td>Posted Date</td>
                                 <td>Student Name</td>
                                 <td>Contact</td>
                                 <td>Status</td>
@@ -22,6 +23,7 @@ function PostTable() {
                         <tbody>
 
                             <tr>
+                                <td>23-March-2024</td>
                                 <td>vishasl</td>
                                 <td>122455</td>
                                 <td className="link">found</td>
@@ -38,4 +40,4 @@ function PostTable() {
     )
 }
 
-export default PostTable
+export default TeacherUnlockTable
