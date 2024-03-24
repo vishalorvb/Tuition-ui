@@ -31,14 +31,14 @@ function Navbar() {
         { id: 9, tag: "Post Tuition", link: "/home-tuition", open: 1 },
 
         { id: 7, tag: "Profile", link: "/profile", open: 2 },
-        { id: 8, tag: "Join", link: "/join_teacher", open: 1 },
+        { id: 8, tag: "Join as Teacher", link: "/join_teacher", open: 1 },
     ]
 
 
     return (
         <div>
             <div className={styles.navbar}>
-                <div className={styles.logo}><img src="logo.jpg" alt='logo' /></div>
+                <div className={styles.logo}><img src="/logo.jpg" alt='logo' /></div>
                 <div className={styles["hamburger-icon"]}>
                     <IconButton
                         color='inherit'

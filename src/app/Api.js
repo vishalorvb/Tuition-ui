@@ -24,7 +24,7 @@ export async function getotp(data) {
     }).then(res => {
         return { opration: true, message: res.data.message }
     }).catch(err => {
-        return { opration: false, message: err.response.data.message }
+        return { opration: false, message: err.response.data.message ?? "Somethin went wrong" }
     })
 }
 
