@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Tuition from '../Components/CustomComp/Tuition'
 
 function Page() {
