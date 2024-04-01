@@ -2,7 +2,7 @@
 import { Autocomplete, Grid, TextField } from '@mui/material'
 import styles from "../Css/form.module.css"
 import { useEffect, useRef, useState } from 'react'
-import { createTeacher, getPin } from '../Api'
+import { createTeacher, getPin } from '../Service'
 import { useSession } from 'next-auth/react'
 import { useRouter } from "next/navigation"
 import useGlobal from '../Components/Hooks/useGlobal'

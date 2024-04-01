@@ -7,7 +7,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation";
 import useGlobal from "../Hooks/useGlobal";
 import { useState } from "react"
-import { getotp, login } from "@/app/Api"
+import { getotp, login } from "@/app/Service"
 import { signIn } from "next-auth/react"
 import VerifyOtp from "../CustomComp/VerifyOtp"
 

@@ -5,7 +5,7 @@ import styles from "../../Css/form.module.css"
 import Link from "next/link"
 import useGlobal from "../Hooks/useGlobal"
 import { useRef, useState } from "react"
-import { createUser } from "@/app/Api"
+import { createUser } from "@/app/Service"
 import VerifyOtp from "../CustomComp/VerifyOtp"
 function Register() {
 

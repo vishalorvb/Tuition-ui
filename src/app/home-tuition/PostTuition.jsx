@@ -2,7 +2,7 @@
 import { Autocomplete, Grid, Paper } from "@mui/material"
 import styles from "../Css/form.module.css"
 import FormPage from "../Components/CustomComp/FormPage"
-import { getPin, postTuition } from "../Api"
+import { getPin, postTuition } from "../Service"
 import { useRef, useState } from "react"
 import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"

@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Button, IconButton } from '@mui/material';
 import { Drawer } from '@mui/material'
 import { useSession } from 'next-auth/react';
-import { login } from '@/app/Api';
+import { login } from '@/app/Service';
 
 function Navbar() {
 

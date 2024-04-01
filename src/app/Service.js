@@ -80,3 +80,5 @@ export async function postTuition(data, token) {
         return { opration: false, message: "Failed" }
     })
 }
+
+
