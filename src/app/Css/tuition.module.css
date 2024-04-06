@@ -1,9 +1,9 @@
 .main {
     max-width: 390px;
-    box-shadow: 0px 10px 35px -9px rgba(0, 0, 0, 0.43);
+    box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.43);
     border-radius: 6px;
     padding: 4px;
-    margin: auto;
+    margin: 10px;
 }
 
 
@@ -48,7 +48,7 @@
     padding: 0px 4px 0px 4px;
     background-color: rgb(171, 197, 234);
     border-radius: 5px;
-    display: inline-block;
+    /*display: inline-block;*/
     font-size: 12px;
 
 }

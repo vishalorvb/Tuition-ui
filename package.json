@@ -16,6 +16,7 @@
         "@mui/material": "^5.15.2",
         "@mui/styled-engine-sc": "^6.0.0-alpha.10",
         "axios": "^1.6.7",
+        "bootstrap": "^5.3.3",
         "next": "14.0.1",
         "next-auth": "^4.24.5",
         "react": "^18",
