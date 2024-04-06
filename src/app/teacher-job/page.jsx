@@ -4,6 +4,7 @@ import Tuition from '../Components/CustomComp/Tuition'
 import { getLatestTuition } from '../Service/Tuitionservice';
 import TuitionList from './TuitionList';
 import SearchBox from '../Components/CustomComp/SearchBox';
+import CityList from '../Components/CustomComp/CityList';
 
 
 async function Page() {
@@ -11,10 +12,7 @@ async function Page() {
     let tuition = t.data
     return (
         <div>
-            <SearchBox
-                redirectUrl={"/"}
-            ></SearchBox>
-
+            <CityList></CityList>
         </div>
     )
 }

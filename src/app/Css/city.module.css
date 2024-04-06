@@ -1,0 +1,31 @@
+.heading {
+
+
+    display: inline-block;
+
+}
+
+.list {
+    list-style-type: none;
+    padding: .1rem;
+    margin: .2rem;
+}
+
+.listItem {
+    background-color: #ffffff;
+    padding: .2rem;
+    font-size: 1rem;
+}
+
+
+
+.listItem a {
+    color: var(--DarkBlue);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.listItem a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
