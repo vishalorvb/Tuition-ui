@@ -5,6 +5,7 @@ import { getLatestTuition } from '../Service/Tuitionservice';
 import TuitionList from './TuitionList';
 import SearchBox from '../Components/CustomComp/SearchBox';
 import CityList from '../Components/CustomComp/CityList';
+import Header from '../Components/CustomComp/Header';
 
 
 async function Page() {
@@ -12,7 +13,7 @@ async function Page() {
     let tuition = t.data
     return (
         <div>
-            <CityList></CityList>
+            <Header></Header>
         </div>
     )
 }

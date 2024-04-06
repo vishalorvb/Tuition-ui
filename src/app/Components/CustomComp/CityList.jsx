@@ -14,14 +14,14 @@ function CityList({ baseUrl, heading }) {
     return (
         <div>
             <div className={styles.heading}>
-                <h4>Tuition in top city</h4>
+                <h4>{heading}</h4>
             </div>
 
             <div>
                 <ul className={styles.list}>
                     {city.map(c =>
                         <li className={styles.listItem}>
-                            <Link href={c}>{c}</Link>
+                            <Link href={`${baseUrl}/${c}`}>{c}</Link>
                         </li>)}
                 </ul>
             </div>
