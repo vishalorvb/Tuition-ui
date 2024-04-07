@@ -6,6 +6,7 @@ import TuitionList from './TuitionList';
 import SearchBox from '../Components/CustomComp/SearchBox';
 import CityList from '../Components/CustomComp/CityList';
 import Header from '../Components/CustomComp/Header';
+import TuitionBlock from './TuitionBlock';
 
 
 async function Page() {
@@ -13,7 +14,9 @@ async function Page() {
     let tuition = t.data
     return (
         <div>
-            <Header></Header>
+            <TuitionBlock
+                initialTuitionList={tuition}
+            ></TuitionBlock>
         </div>
     )
 }
