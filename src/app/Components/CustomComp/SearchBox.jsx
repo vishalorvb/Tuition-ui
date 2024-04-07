@@ -10,7 +10,7 @@ function SearchBox({ heading, redirectUrl, getWord }) {
     const word = useRef(null)
     const router = useRouter();
     function handleClick(e) {
-        let inputWord = word.current.value
+        let inputWord = word.current.value.trim()
         inputWord = inputWord.split(" ").join("-")
         // checking if input field is empty then do nothin
         if (word.current.value.trim() == "") {

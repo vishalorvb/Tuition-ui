@@ -20,7 +20,7 @@ function CityList({ baseUrl, heading }) {
             <div>
                 <ul className={styles.list}>
                     {city.map(c =>
-                        <li className={styles.listItem}>
+                        <li key={c} className={styles.listItem}>
                             <Link href={`${baseUrl}/${c}`}>{c}</Link>
                         </li>)}
                 </ul>

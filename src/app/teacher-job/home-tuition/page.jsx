@@ -1,12 +1,24 @@
 
 
-function page({ params }) {
-    console.log(params)
+import { getLatestTuition } from '@/app/Service/Tuitionservice';
+import TuitionBlock from '../TuitionBlock';
+
+
+
+async function Page() {
+    let t = await getLatestTuition()
+    let tuition = t.data
     return (
         <div>
-            domo
+            <TuitionBlock
+                initialTuitionList={tuition}
+                redirectOnsearchurl={"/teacher-job/home-tuition/"}
+            ></TuitionBlock>
         </div>
     )
 }
 
-export default page
+
+
+
+export default Page
