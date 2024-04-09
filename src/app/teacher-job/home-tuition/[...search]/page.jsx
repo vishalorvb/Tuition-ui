@@ -11,7 +11,6 @@ async function page({ params }) {
         <div>
             <TuitionBlock
                 initialTuitionList={tuition}
-                searchQuery={string}
             ></TuitionBlock>
         </div>
     )

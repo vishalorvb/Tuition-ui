@@ -5,6 +5,7 @@ import TuitionBlock from '../TuitionBlock';
 
 
 
+
 async function Page() {
     let t = await getLatestTuition()
     let tuition = t.data

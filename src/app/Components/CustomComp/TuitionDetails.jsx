@@ -8,8 +8,8 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import styles from "../../Css/tuitiondetails.module.css"
 
-function TuitionDetails() {
-
+function TuitionDetails({ tuition }) {
+    console.log(tuition)
     const steps = [
         {
             date: '22-Jan-2024',
@@ -40,12 +40,12 @@ function TuitionDetails() {
                                 <h4>Student  Name</h4>
                             </div>
                             <div className={styles.desc}>
-                                <p>Vishal Kumar</p>
+                                <p>{tuition.student_name}</p>
                             </div>
                         </Grid>
                         <Grid item xs={5} sm={5} md={5}>
                             <div>
-                                <p className={styles["full-desc"]}>Posted Date: 22-Jan-2024</p>
+                                <p className={styles["full-desc"]}>Posted Date: {tuition.posted_date}</p>
                             </div>
                             <div>
                                 <p className={styles["full-desc"]}>Status : Tuition Verified<IconButton size='small' color='primary'><VerifiedOutlinedIcon /></IconButton></p>
@@ -55,33 +55,33 @@ function TuitionDetails() {
                 </div>
                 <div >
                     <h5 className={styles["desc-heading"]}>Tuition Description:</h5>
-                    <p className={styles["full-desc"]}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem labore, blanditiis explicabo quo, aperiam repudiandae omnis hic aliquam voluptate itaque commodi reprehenderit officia necessitatibus cupiditate nulla cum ipsa sed placeat.</p>
+                    <p className={styles["full-desc"]}>{tuition.description}</p>
                 </div>
                 <div className={styles.mid}>
                     <Grid container spacing={2} alignContent={'flex-start'}>
                         <Grid item >
                             <div >
-                                <p className={styles.tag}><IconButton size='small'><SchoolOutlinedIcon /></IconButton>10th state </p>
+                                <p className={styles.tag}><IconButton size='small'><SchoolOutlinedIcon /></IconButton>{tuition.courses} </p>
                             </div>
                         </Grid>
 
                         <Grid item>
                             <div className={styles.tag}>
-                                <p><IconButton size='small'><MenuBookIcon /></IconButton>Maths And Physics</p>
+                                <p><IconButton size='small'><MenuBookIcon /></IconButton>{tuition.subject}</p>
                             </div>
                         </Grid>
                     </Grid>
                 </div>
                 <div className={styles["more-info"]}>
-                    <p><IconButton size='small' color="primary"><LocationOnOutlinedIcon /> </IconButton>Madhapur, Hydrabad,near hitech cinema</p>
+                    <p><IconButton size='small' color="primary"><LocationOnOutlinedIcon /> </IconButton>{tuition.locality}</p>
                     <Grid container spacing={2}>
                         <Grid item xs={4} sm={4} md={4}>
 
-                            <p><IconButton size='small' color="primary"><VisibilityOutlinedIcon /></IconButton>3 user view contact </p>
+                            <p><IconButton size='small' color="primary"><VisibilityOutlinedIcon /></IconButton>{tuition.unlock} user view contact </p>
                         </Grid>
                         <Grid item xs={4} sm={4} md={4}>
 
-                            <p><IconButton size='small' color="primary"><MoneyOutlinedIcon /></IconButton> 200/hr </p>
+                            <p><IconButton size='small' color="primary"><MoneyOutlinedIcon /></IconButton> {tuition.fee}/hr </p>
 
                         </Grid>
                         <Grid item xs={4} sm={4} md={4}>
