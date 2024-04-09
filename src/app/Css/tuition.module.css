@@ -22,11 +22,18 @@
 .pic {
     background-color: rgb(67, 103, 153);
     border-radius: 5px;
+    display: inline-block;
 }
 
 .name {
     color: rgb(13, 68, 145);
-    padding: 3px;
+
+}
+
+.name h4,
+.desc p {
+    margin: 0;
+    padding: 0;
 }
 
 .desc {
@@ -35,7 +42,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
-    padding: 3px;
+
 }
 
 .mid {
@@ -48,18 +55,20 @@
     padding: 0px 4px 0px 4px;
     background-color: rgb(171, 197, 234);
     border-radius: 5px;
-    /*display: inline-block;*/
+    display: inline-block;
     font-size: 12px;
+    margin: 4px;
+    padding: 2px;
 
 }
 
 .bottom {
-    margin: 2px;
+
     padding: 2px;
     font-size: 13px;
 }
 
 .css-i4bv87-MuiSvgIcon-root {
-    /*color: green !important;*/
+    color: green !important;
     font-size: inherit !important;
 }
