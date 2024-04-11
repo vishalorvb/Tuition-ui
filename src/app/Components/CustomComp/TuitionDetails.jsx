@@ -1,15 +1,18 @@
-import { Box, Button, Grid, IconButton, Step, StepContent, StepLabel, Stepper, Typography } from "@mui/material"
+import { Box, IconButton, Step, StepContent, StepLabel, Stepper, Typography } from "@mui/material"
 import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
-import MoneyOutlinedIcon from '@mui/icons-material/MoneyOutlined';
 import WifiOutlinedIcon from '@mui/icons-material/WifiOutlined';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import styles from "../../Css/tuitiondetails.module.css"
+import { formateDate } from "@/app/utility";
+import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
+import WifiOffIcon from '@mui/icons-material/WifiOff';
+import TeacherContactBtn from "../MiniComp/TeacherContactBtn";
+import TuitionUnclockBtn from "../MiniComp/TuitionUnclockBtn";
 
 function TuitionDetails({ tuition }) {
-    console.log(tuition)
     const steps = [
         {
             date: '22-Jan-2024',
@@ -28,69 +31,64 @@ function TuitionDetails({ tuition }) {
         <div>
             <div className={styles["tuition-details"]}>
                 <div className={styles["name-details"]}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={2} sm={1} md={1}>
-                            <div className={styles.pic}>
-                                <img src="logo.jpg" alt="" />
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-1">
+                                <div className={styles.pic}>
+                                    <img src="/logo.jpg" alt="" />
+                                </div>
                             </div>
-                        </Grid>
+                            <div className="col-5">
+                                <div className={styles.name}>
+                                    <h4>{tuition.student_name}</h4>
+                                    <p className={styles["full-desc"]}>Verified<IconButton size='small' color='primary'><VerifiedOutlinedIcon /></IconButton></p>
+                                </div>
+                            </div>
+                            <div className="col-5">
+                                <p className={styles["full-desc"]}>Posted Date: {formateDate(tuition.posted_date)}</p>
 
-                        <Grid item xs={5} sm={6} md={6}>
-                            <div className={styles.name}>
-                                <h4>Student  Name</h4>
                             </div>
-                            <div className={styles.desc}>
-                                <p>{tuition.student_name}</p>
-                            </div>
-                        </Grid>
-                        <Grid item xs={5} sm={5} md={5}>
-                            <div>
-                                <p className={styles["full-desc"]}>Posted Date: {tuition.posted_date}</p>
-                            </div>
-                            <div>
-                                <p className={styles["full-desc"]}>Status : Tuition Verified<IconButton size='small' color='primary'><VerifiedOutlinedIcon /></IconButton></p>
-                            </div>
-                        </Grid>
-                    </Grid>
+                        </div>
+                    </div>
                 </div>
                 <div >
                     <h5 className={styles["desc-heading"]}>Tuition Description:</h5>
                     <p className={styles["full-desc"]}>{tuition.description}</p>
                 </div>
                 <div className={styles.mid}>
-                    <Grid container spacing={2} alignContent={'flex-start'}>
-                        <Grid item >
-                            <div >
-                                <p className={styles.tag}><IconButton size='small'><SchoolOutlinedIcon /></IconButton>{tuition.courses} </p>
-                            </div>
-                        </Grid>
 
-                        <Grid item>
-                            <div className={styles.tag}>
-                                <p><IconButton size='small'><MenuBookIcon /></IconButton>{tuition.subject}</p>
-                            </div>
-                        </Grid>
-                    </Grid>
+                    <div className="row">
+                        <div className="col">
+                            <p className={styles.tag}><IconButton size='small'><SchoolOutlinedIcon /></IconButton>{tuition.course} </p>
+                            <p className={styles.tag}><IconButton size='small'><MenuBookIcon /></IconButton>{tuition.subject}</p>
+                        </div>
+                    </div>
                 </div>
                 <div className={styles["more-info"]}>
-                    <p><IconButton size='small' color="primary"><LocationOnOutlinedIcon /> </IconButton>{tuition.locality}</p>
-                    <Grid container spacing={2}>
-                        <Grid item xs={4} sm={4} md={4}>
+                    <div className="container">
+                        <div className="row">
+                            <div className="col">
+                                <p className={styles.tuitiondeatils}><IconButton size='small' color="primary"><LocationOnOutlinedIcon /> </IconButton>{tuition.locality}</p>
+                                <p className={styles.tuitiondeatils}><IconButton size='small' color="primary"><VisibilityOutlinedIcon /></IconButton> View:{tuition.unlocks} </p>
+                                <p className={styles.tuitiondeatils}><IconButton size='small' color="primary"><CurrencyRupeeIcon /></IconButton> {tuition.fee}/hr </p>
 
-                            <p><IconButton size='small' color="primary"><VisibilityOutlinedIcon /></IconButton>{tuition.unlock} user view contact </p>
-                        </Grid>
-                        <Grid item xs={4} sm={4} md={4}>
+                                {tuition.pincode == 0 ? <p className={styles.tuitiondeatils}><IconButton size='small'><WifiOffIcon /></IconButton></p> :
+                                    <p className={styles.tuitiondeatils}><IconButton size='small' color="primary"><WifiOutlinedIcon /></IconButton></p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.contactbtn}>
 
-                            <p><IconButton size='small' color="primary"><MoneyOutlinedIcon /></IconButton> {tuition.fee}/hr </p>
-
-                        </Grid>
-                        <Grid item xs={4} sm={4} md={4}>
-
-                            <p><IconButton size='small' color="primary"><WifiOutlinedIcon /></IconButton></p>
-
-                        </Grid>
-                    </Grid>
-
+                    <div className="row">
+                        <div className="col d-flex justify-content-center">
+                            <TuitionUnclockBtn
+                                phoneNumber={tuition.phone_number}
+                                tuitionId={tuition.id}
+                            ></TuitionUnclockBtn>
+                        </div>
+                    </div>
                 </div>
                 <h5 className={styles["desc-heading"]}>Updates:</h5>
                 <div className={styles.steper}>
@@ -110,13 +108,6 @@ function TuitionDetails({ tuition }) {
                             ))}
                         </Stepper>
                     </Box>
-                </div>
-                <div className={styles.contactbtn}>
-                    <Grid container spacing={2} justifyContent={"center"} alignItems={"center"}>
-                        <Grid item >
-                            <Button variant="contained">View Contact</Button>
-                        </Grid>
-                    </Grid>
                 </div>
             </div>
         </div>

@@ -1,0 +1,13 @@
+.main {
+    display: inline-block;
+    background-color: var(--DarkBlue);
+    color: white;
+    padding: .4rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.main a {
+    text-decoration: none;
+    color: inherit;
+}

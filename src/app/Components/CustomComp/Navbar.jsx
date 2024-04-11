@@ -12,14 +12,10 @@ import { login } from '@/app/Service';
 
 function Navbar() {
 
-
-
-
-
-
     const [drawer, setDrawer] = useState(false)
     let { status } = useSession()
     let data = useSession()
+
     //{
     //    1: always
     //    2:when login
@@ -29,13 +25,14 @@ function Navbar() {
         { id: 1, tag: "Home", link: "/", open: 1 },
         { id: 2, tag: "Tuition", link: "/teacher-job", open: 1 },
         { id: 3, tag: "Teacher", link: "/teacher", open: 1 },
+
+        { id: 9, tag: "Post Tuition", link: "/home-tuition", open: 1 },
+        { id: 8, tag: "Join as Teacher", link: "/join_teacher", open: 1 },
+        { id: 7, tag: "Profile", link: "/profile", open: 2 },
         { id: 4, tag: "Login", link: "/login", open: 3 },
         { id: 5, tag: "Logout", link: "/logout", open: 2 },
         { id: 6, tag: "Registration", link: "/registration", open: 3 },
-        { id: 9, tag: "Post Tuition", link: "/home-tuition", open: 1 },
 
-        { id: 7, tag: "Profile", link: "/profile", open: 2 },
-        { id: 8, tag: "Join as Teacher", link: "/join_teacher", open: 1 },
     ]
 
 

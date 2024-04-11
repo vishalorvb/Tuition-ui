@@ -20,8 +20,15 @@ export async function searchTuition(queryString, pageNumber = 1) {
     })
 }
 
-export async function getTuitionDetails(tuitionId) {
-    return await axios.get(`${baseUrl}/tuition/getTuitionByid/${tuitionId}`).then(res => {
+export async function getTuitionDetails(tuitionId, token = null) {
+
+    const headers = {
+        'Content-Type': 'application/json' // You can add other headers if needed
+    };
+    if (token) {
+        headers['Authorization'] = `Bearer ${token}`;
+    }
+    return await axios.get(`${baseUrl}/tuition/getTuitionByid/${tuitionId}`, { headers }).then(res => {
         return res.data.data;
     })
         .catch(err => {

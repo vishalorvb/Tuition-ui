@@ -43,7 +43,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 6px;
     background: linear-gradient(27deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 0%, rgba(7, 139, 201, 1) 0%, rgba(18, 18, 113, 1) 42%);
 }
 

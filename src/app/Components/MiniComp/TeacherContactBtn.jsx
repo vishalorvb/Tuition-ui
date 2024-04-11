@@ -1,6 +1,6 @@
 import styles from "../../Css/contactbutton.module.css"
 
-function TeacherContactBtn({ techerId }) {
+function TeacherContactBtn({ phoneNumber, techerId }) {
     return (
         <div className={styles.main}>
             <div >

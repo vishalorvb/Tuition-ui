@@ -18,7 +18,7 @@ function Carousel() {
             <div className={styles.content}>
                 <Grid container spacing={2} justifyContent="center">
                     <Grid item md={6} xs={12}>
-                        <h1> <strong>Find Test</strong> </h1>
+                        <h1> <strong>Find Educator</strong> </h1>
                         <p>Discover the Perfect Tutor for Your Learning Journey</p>
                         <div className={styles.btn}>
                             <TranparentButton
