@@ -9,7 +9,6 @@ import styles from "../../Css/tuitiondetails.module.css"
 import { formateDate } from "@/app/utility";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import WifiOffIcon from '@mui/icons-material/WifiOff';
-import TeacherContactBtn from "../MiniComp/TeacherContactBtn";
 import TuitionUnclockBtn from "../MiniComp/TuitionUnclockBtn";
 
 function TuitionDetails({ tuition }) {
@@ -26,7 +25,6 @@ function TuitionDetails({ tuition }) {
         },
     ];
 
-
     return (
         <div>
             <div className={styles["tuition-details"]}>
@@ -41,7 +39,7 @@ function TuitionDetails({ tuition }) {
                             <div className="col-5">
                                 <div className={styles.name}>
                                     <h4>{tuition.student_name}</h4>
-                                    <p className={styles["full-desc"]}>Verified<IconButton size='small' color='primary'><VerifiedOutlinedIcon /></IconButton></p>
+                                    {tuition.verify && <p className={styles["full-desc"]}>Verified<IconButton size='small' color='primary'><VerifiedOutlinedIcon /></IconButton></p>}
                                 </div>
                             </div>
                             <div className="col-5">
@@ -68,19 +66,19 @@ function TuitionDetails({ tuition }) {
                     <div className="container">
                         <div className="row">
                             <div className="col">
-                                <p className={styles.tuitiondeatils}><IconButton size='small' color="primary"><LocationOnOutlinedIcon /> </IconButton>{tuition.locality}</p>
+                                {tuition.teaching_mode != "online" && <p className={styles.tuitiondeatils}><IconButton size='small' color="primary"><LocationOnOutlinedIcon /> </IconButton>{tuition.locality}</p>}
                                 <p className={styles.tuitiondeatils}><IconButton size='small' color="primary"><VisibilityOutlinedIcon /></IconButton> View:{tuition.unlocks} </p>
                                 <p className={styles.tuitiondeatils}><IconButton size='small' color="primary"><CurrencyRupeeIcon /></IconButton> {tuition.fee}/hr </p>
 
-                                {tuition.pincode == 0 ? <p className={styles.tuitiondeatils}><IconButton size='small'><WifiOffIcon /></IconButton></p> :
+                                {tuition.teaching_mode == "offline" ? <p className={styles.tuitiondeatils}><IconButton size='small'><WifiOffIcon /></IconButton></p> :
                                     <p className={styles.tuitiondeatils}><IconButton size='small' color="primary"><WifiOutlinedIcon /></IconButton></p>
                                 }
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className={styles.contactbtn}>
 
+                <div className={styles.contactbtn}>
                     <div className="row">
                         <div className="col d-flex justify-content-center">
                             <TuitionUnclockBtn
@@ -90,7 +88,9 @@ function TuitionDetails({ tuition }) {
                         </div>
                     </div>
                 </div>
-                <h5 className={styles["desc-heading"]}>Updates:</h5>
+                {tuition.verify && <p className={styles.note}>Note:This recuirment is verified by our executive</p>}
+                {tuition.unlocks == 0 && <p className={styles.note}>Note:Be the trailblazer! As of now, no one has unlocked this offer. Take the lead and be the first to seize the opportunity!</p>}
+                {/*<h5 className={styles["desc-heading"]}>Updates:</h5>
                 <div className={styles.steper}>
                     <Box sx={{ maxWidth: 400 }}>
                         <Stepper orientation="vertical">
@@ -108,7 +108,7 @@ function TuitionDetails({ tuition }) {
                             ))}
                         </Stepper>
                     </Box>
-                </div>
+                </div>*/}
             </div>
         </div>
     )

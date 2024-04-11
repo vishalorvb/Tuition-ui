@@ -3,6 +3,7 @@ import { getTuitionDetails, searchTuition } from "@/app/Service/Tuitionservice"
 import RelatedTuitionList from "./RelatedTuitionList";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import Header from "@/app/Components/CustomComp/Header";
 
 async function page({ params }) {
 
@@ -22,7 +23,15 @@ async function page({ params }) {
         <div>
             <div className="container">
                 <div className="row">
-
+                    <div className="col-12">
+                        <Header
+                            heading="Discover Qualified and Verified Teachers"
+                            subHeading="Get  free demo classes when you post your tuition requirements! Experience top-quality teaching firsthand and find your perfect match hassle-free. Don't wait, start learning with us today!"
+                        ></Header>
+                    </div>
+                    <div className="col-12">
+                        <p>Note: Each unlock(view of contact) reduce your credit point by 1</p>
+                    </div>
                 </div>
                 <div className="row">
                     <div className="col-lg-8">
@@ -31,8 +40,9 @@ async function page({ params }) {
                         ></TuitionDetails>
                     </div>
                     <div className="col-lg-4">
+
                         <RelatedTuitionList
-                            tutionList={relatedTuition}
+                            tutionList={relatedTuition.slice(0, 3)}
                         ></RelatedTuitionList>
                     </div>
 

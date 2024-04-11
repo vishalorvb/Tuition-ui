@@ -35,3 +35,20 @@ export async function getTuitionDetails(tuitionId, token = null) {
             return null
         })
 }
+
+export async function unlockTuition(tuitionId, token) {
+    return axios({
+        method: 'POST',
+        data: { "tuition_id": tuitionId },
+        url: `${baseUrl}/tuition/unlockTuition`,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    }).then(res => {
+        return res.data
+    }).catch(err => {
+
+    })
+
+}
