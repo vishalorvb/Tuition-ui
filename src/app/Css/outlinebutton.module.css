@@ -1,0 +1,9 @@
+.main {
+    border: 1px solid var(--DarkBlue);
+    display: inline;
+    color: var(--DarkBlue);
+    padding: 0.4rem;
+    margin: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+}
