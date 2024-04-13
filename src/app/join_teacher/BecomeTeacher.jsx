@@ -54,6 +54,7 @@ function BecomeTeacher() {
         e.preventDefault()
         let payload = new FormData(f.current)
         payload = Object.fromEntries(payload)
+        console.log(payload)
         createTeacher(payload, data.access_token).then(res => {
             if (res.opration) {
                 setSnackbarData({
@@ -101,8 +102,8 @@ function BecomeTeacher() {
                                     >cancel</OutLineButton>}
 
                                 </div>
-                                <form action="/" method="post" onSubmit={handleSubmit} ref={f}>
-                                    <input className={styles.upload} ref={file} type="file" onChange={handleImgaeUpload} accept=".jpg,.jpeg,.png" />
+                                <form method="post" onSubmit={handleSubmit} ref={f}>
+                                    <input className={styles.upload} ref={file} type="file" onChange={handleImgaeUpload} accept=".jpg,.jpeg,.png" name='photo' />
                                     <label >Name:<span className="req">*</span></label>
                                     <input type="text" name="teacher_name" placeholder="Your Full Name" required />
 

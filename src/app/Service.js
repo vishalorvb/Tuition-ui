@@ -50,13 +50,14 @@ export async function getPin(pin) {
 }
 
 export async function createTeacher(data, token) {
+    console.log(data)
     return await axios({
         method: 'post',
         data: data,
         url: `${baseUrl}/teacher/create_teacher`,
         headers: {
             Authorization: `Bearer ${token}`,
-            "Content-Type": 'application/json',
+            "Content-Type": 'multipart/form-data',
         }
     }).then(res => {
         return { opration: true, message: res.data.message }
