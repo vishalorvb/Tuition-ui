@@ -5,6 +5,15 @@ import styles from '../../Css/searchbox.module.css'
 import Button from '../MiniComp/Button'
 import { useRouter } from 'next/navigation'
 
+
+
+/**
+ * 
+ * @param {heading , redirectUrl,getWord}
+ * if redirectUrl is undefined => it will call getWord() and pass trimmed value of search input in getWord()
+ * else it will redirect to redirectUrl
+ * @returns 
+ */
 function SearchBox({ heading, redirectUrl, getWord }) {
 
     const word = useRef(null)

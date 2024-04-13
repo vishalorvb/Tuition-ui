@@ -13,7 +13,6 @@ async function Page() {
         <div>
             <TuitionBlock
                 initialTuitionList={tuition}
-                redirectOnsearchurl={"/teacher-job/home-tuition/"}
             ></TuitionBlock>
         </div>
     )
