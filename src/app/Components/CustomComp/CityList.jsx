@@ -6,9 +6,23 @@ function CityList({ baseUrl, heading }) {
         "Delhi",
         "Kolkata",
         "Bangalore",
-        "Hydrabad",
+        "Hyderabad",
         "Mumbai",
-        "Chennai"
+        "Chennai",
+        "Pune",
+        "Ahmedabad",
+        "Jaipur",
+        "Lucknow",
+        "Kanpur",
+        "Nagpur",
+        "Indore",
+        "Thane",
+        "Visakhapatnam",
+        "Patna",
+        "Vadodara",
+        "Ghaziabad",
+        "Ludhiana",
+        "Agra"
     ]
 
     return (

@@ -54,11 +54,12 @@ function TuitionDetails({ tuition }) {
                     <p className={styles["full-desc"]}>{tuition.description}</p>
                 </div>
                 <div className={styles.mid}>
-
-                    <div className="row">
-                        <div className="col">
-                            <p className={styles.tag}><IconButton size='small'><SchoolOutlinedIcon /></IconButton>{tuition.course} </p>
-                            <p className={styles.tag}><IconButton size='small'><MenuBookIcon /></IconButton>{tuition.subject}</p>
+                    <div className="cointaner">
+                        <div className="row">
+                            <div className="col">
+                                <p className={styles.tag}><IconButton size='small'><SchoolOutlinedIcon /></IconButton>{tuition.course} </p>
+                                <p className={styles.tag}><IconButton size='small'><MenuBookIcon /></IconButton>{tuition.subject}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

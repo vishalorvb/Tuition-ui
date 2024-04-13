@@ -4,7 +4,7 @@
     --LightBlue: rgba(7, 139, 201, 1);
     --Light: rgb(120, 16, 14);
     --Fade: rgba(13, 27, 73, 0.155);
-    --SecondryText: rgb(72, 73, 74);
+    --SecondryText: gray;
 }
 
 * {
@@ -86,4 +86,12 @@ input[type="submit"]:hover {
 .link {
     text-decoration: underline;
     cursor: pointer;
+}
+
+
+
+.endmessage {
+    text-align: center;
+    padding: .2rem;
+    color: var(--SecondryText);
 }

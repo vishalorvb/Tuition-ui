@@ -13,7 +13,8 @@ async function page({ params }) {
     const session = await getServerSession(authOptions);
     const token = session?.access_token ?? null
 
-    const tution = await getTuitionDetails(params.tuitionslug[1], token)
+    const tutionId = params.tuitionslug[1]
+    const tution = await getTuitionDetails(tutionId, token)
     let relatedTuition = []
     if (tution != null) {
         relatedTuition = (await searchTuition(slug)).data
@@ -42,7 +43,7 @@ async function page({ params }) {
                     <div className="col-lg-4">
 
                         <RelatedTuitionList
-                            tutionList={relatedTuition.slice(0, 3)}
+                            tutionList={relatedTuition.filter(t => t.id != tutionId).slice(0, 3)}
                         ></RelatedTuitionList>
                     </div>
 

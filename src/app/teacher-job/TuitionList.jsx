@@ -1,6 +1,4 @@
-'use client'
 
-import { Grid } from "@mui/material"
 import Tuition from "../Components/CustomComp/Tuition"
 import { formateDate } from "../utility"
 
@@ -25,6 +23,11 @@ function TuitionList({ tuitionList }) {
                         </div>
                     )}
                 </div>
+                {tuitionList?.length == 0 && <div className="row">
+                    <div className="col">
+                        <p className="endmessage">No posts were found. Please try searching with a different keyword.</p>
+                    </div>
+                </div>}
             </div>
         </div>
     )

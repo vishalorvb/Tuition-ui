@@ -18,10 +18,14 @@
 }
 
 .full-desc {
-    color: rgb(57, 58, 58);
+    color: var(--SecondryText);
     padding: 3px;
+    margin-top: .5rem;
+
 
 }
+
+
 
 .tag {
     padding: 0px 4px 0px 4px;
@@ -34,7 +38,8 @@
 
 }
 
-.more-info {
+.more-info,
+.mid {
     margin: .5rem;
     padding: .2rem;
 }
