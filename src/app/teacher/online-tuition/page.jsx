@@ -1,9 +1,14 @@
+import { lastestTeacher } from '@/app/Service/TeacherService'
 import React from 'react'
+import TeacherBlock from '../TeacherBlock'
 
-function page() {
+async function page() {
+    const teacherList = await lastestTeacher()
     return (
         <div>
-            online
+            <TeacherBlock
+                initialTeacherList={teacherList}
+            ></TeacherBlock>
         </div>
     )
 }

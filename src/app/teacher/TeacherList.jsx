@@ -2,7 +2,6 @@ import React from 'react'
 import Teacher from '../Components/CustomComp/Teacher'
 
 function TeacherList({ teacherList }) {
-
     return (
         <div className="container">
             <div className="row">

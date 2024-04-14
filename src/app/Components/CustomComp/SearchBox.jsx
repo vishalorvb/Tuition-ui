@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation'
  * 
  * @param {heading , redirectUrl,getWord}
  * if redirectUrl is undefined => it will call getWord() and pass trimmed value of search input in getWord()
- * else it will redirect to redirectUrl
+ * else it will redirect to redirectUrl appending keyword at end of url
  * @returns 
  */
 function SearchBox({ heading, redirectUrl, getWord }) {

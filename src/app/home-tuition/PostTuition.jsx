@@ -23,7 +23,7 @@ function PostTuition() {
         e.preventDefault()
         let payload = new FormData(f.current)
         payload = Object.fromEntries(payload)
-        console.log(payload)
+
         postTuition(payload, data?.access_token).then(res => {
             if (res.opration) {
                 setSnackbarData({

@@ -5,6 +5,7 @@ import Header from "../Components/CustomComp/Header"
 import TeacherList from "./TeacherList"
 import CityList from "../Components/CustomComp/CityList"
 import SearchBox from "../Components/CustomComp/SearchBox"
+import { searchTeacher } from "../Service/TeacherService"
 
 function TeacherBlock({ initialTeacherList, redirectUrl }) {
 
@@ -13,7 +14,8 @@ function TeacherBlock({ initialTeacherList, redirectUrl }) {
 
 
     function handleSearch(words) {
-
+        setTeacher([])
+        searchTeacher(words).then(res => setTeacher(res.data))
     }
     return (
         <div>
