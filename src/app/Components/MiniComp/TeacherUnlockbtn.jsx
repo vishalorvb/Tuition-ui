@@ -39,7 +39,7 @@ function TeacherUnlockbtn({ phoneNumber, teacherId }) {
         })
     }
     return (
-        <div className={styles.main} onClick={handleClick}>
+        <div className={styles.main} >
             {phone == undefined ? <div
                 onClick={handleClick}
             >

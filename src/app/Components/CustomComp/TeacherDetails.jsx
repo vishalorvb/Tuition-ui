@@ -5,37 +5,37 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import CastForEducationOutlinedIcon from '@mui/icons-material/CastForEducationOutlined';
 import WifiOutlinedIcon from '@mui/icons-material/WifiOutlined';
 import WifiOffOutlinedIcon from '@mui/icons-material/WifiOffOutlined';
-import TeacherContactBtn from "../MiniComp/TeacherContactBtn";
-function TeacherDetails() {
+import TeacherUnlockbtn from "../MiniComp/TeacherUnlockbtn";
+function TeacherDetails({ imgUrl, name, gender, age, qualification, about, subject, location, classes, fee, mode, phone_number, teacherId }) {
     return (
         <div>
             <div className={styles.section}>
                 <Grid container columnSpacing={2} alignItems="center" justifyContent="flex-start" alignContent="center">
                     <Grid item md={1} xs={2}>
                         <div className={styles.pic}>
-                            <img src="logo.jpg" alt="" />
+                            <img src={imgUrl} alt="" />
                         </div>
                     </Grid>
                     <Grid item md={10} xs={10}>
-                        <h3 className={styles.hightlight}>Vishal Kumar (Male-22)</h3>
-                        <p className={styles.text}>B.Tech in Electronic and communication</p>
+                        <h3 className={styles.hightlight}>{name} ({gender}-{age})</h3>
+                        <p className={styles.text}>{qualification}</p>
                     </Grid>
                 </Grid>
             </div>
             <div className={styles.section}>
                 <h4 className={styles.hightlight} >About:</h4>
-                <p className={styles.text}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt veritatis reiciendis enim. Sapiente sequi laborum voluptate eius ipsa minus distinctio consequuntur voluptatibus tempore deserunt, nulla a enim mollitia, doloremque ea!</p>
+                <p className={styles.text}>{about}</p>
             </div>
             <div className={styles.section}>
                 <h4 className={styles.hightlight}> Subject and Expertise</h4>
-                <Chip>Physics</Chip>
+                <Chip>{subject}</Chip>
             </div>
             <div className={styles.section}>
-                <p className={styles.teacherinfo}>  <LocationOnOutlinedIcon /> Hydrabad telengana</p>
+                <p className={styles.teacherinfo}>  <LocationOnOutlinedIcon /> {location}</p>
 
             </div>
             <div className={styles.section}>
-                <p className={styles.teacherinfo}><CastForEducationOutlinedIcon /> 12th IIT</p>
+                <p className={styles.teacherinfo}><CastForEducationOutlinedIcon /> {classes}</p>
 
             </div>
             <div className={styles.section}>
@@ -49,7 +49,7 @@ function TeacherDetails() {
                     </Grid>
                     <Grid item md={3} xs={3}>
                         <div className={styles.mode}>
-                            <h5 className={styles.test}>₹ 200/Hr</h5>
+                            <h5 className={styles.test}>₹ {fee}/Hr</h5>
                         </div>
                         <p>Fee</p>
                     </Grid>
@@ -58,7 +58,10 @@ function TeacherDetails() {
             <div>
                 <Grid container spacing={2} justifyContent="center" alignItems="center">
                     <Grid item>
-                        <TeacherContactBtn></TeacherContactBtn>
+                        <TeacherUnlockbtn
+                            phoneNumber={phone_number}
+                            teacherId={teacherId}
+                        ></TeacherUnlockbtn>
                     </Grid>
                 </Grid>
             </div>

@@ -22,5 +22,21 @@ export async function unlockTeacher(teacherId, token) {
     }).catch(err => {
 
     })
+}
 
+
+export async function getTeacherDetails(teacherId, token = null) {
+
+    const headers = {
+        'Content-Type': 'application/json' // You can add other headers if needed
+    };
+    if (token) {
+        headers['Authorization'] = `Bearer ${token}`;
+    }
+    return await axios.get(`${baseUrl}/teacher/getTeacherById/${teacherId}`, { headers }).then(res => {
+        return res.data.data;
+    })
+        .catch(err => {
+            return null
+        })
 }
