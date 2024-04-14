@@ -1,6 +1,6 @@
 .main {
     max-width: 390px;
-    box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.43);
+    box-shadow: var(--Shadow);
     border-radius: 6px;
     padding: 4px;
     margin: 10px;
@@ -20,13 +20,13 @@
 }
 
 .pic {
-    background-color: rgb(67, 103, 153);
+    background-color: var(--ImageBackground);
     border-radius: 5px;
     display: inline-block;
 }
 
 .name {
-    color: rgb(13, 68, 145);
+    color: var(--Name);
 
 }
 
@@ -53,7 +53,7 @@
 
 .tag {
     padding: 0px 4px 0px 4px;
-    background-color: rgb(171, 197, 234);
+    background-color: var(--Tag);
     border-radius: 5px;
     display: inline-block;
     font-size: 12px;
@@ -66,9 +66,4 @@
 
     padding: 2px;
     font-size: 13px;
-}
-
-.css-i4bv87-MuiSvgIcon-root {
-    color: green !important;
-    font-size: inherit !important;
 }

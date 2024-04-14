@@ -5,6 +5,11 @@
     --Light: rgb(120, 16, 14);
     --Fade: rgba(13, 27, 73, 0.155);
     --SecondryText: gray;
+    --Card: rgb(171, 197, 234);
+    --ImageBackground: rgb(67, 103, 153);
+    --Tag: rgb(171, 197, 234);
+    --Name: rgb(13, 68, 145);
+    --Shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.43);
 }
 
 * {
