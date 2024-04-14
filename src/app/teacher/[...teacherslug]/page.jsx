@@ -1,9 +1,10 @@
 import Header from '@/app/Components/CustomComp/Header';
 import TeacherDetails from '@/app/Components/CustomComp/TeacherDetails';
-import { getTeacherDetails } from '@/app/Service/TeacherService';
+import { getTeacherDetails, searchTeacher } from '@/app/Service/TeacherService';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { getServerSession } from 'next-auth';
 import React from 'react'
+import RelatedTeacher from './RelatedTeacher';
 
 async function page({ params }) {
 
@@ -13,8 +14,13 @@ async function page({ params }) {
     const session = await getServerSession(authOptions);
     const token = session?.access_token ?? null
     const teacherId = params.teacherslug[1]
-
     const teacher = await getTeacherDetails(teacherId, token)
+    let relatedTeacher;
+    if (teacher != null) {
+        relatedTeacher = await (await searchTeacher(slug)).data
+    }
+
+
     return (
         <div>
             <div className="container">
@@ -32,7 +38,7 @@ async function page({ params }) {
                 <div className="row">
                     <div className="col-8">
                         <TeacherDetails
-                            imgUrl={teacher.photo ?? "/profilepic"}
+                            imgUrl={teacher.photo ?? "/profilepic.png"}
                             name={teacher.name}
                             gender={teacher.gender}
                             experience={teacher.experience}
@@ -50,6 +56,11 @@ async function page({ params }) {
                             teacherId={teacher.id}
                             phone_number={teacher.phone_number}
                         ></TeacherDetails>
+                    </div>
+                    <div className="col-4">
+                        <RelatedTeacher
+                            teacherList={relatedTeacher}
+                        ></RelatedTeacher>
                     </div>
                 </div>
             </div>
