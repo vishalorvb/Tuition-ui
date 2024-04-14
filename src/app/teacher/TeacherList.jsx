@@ -17,7 +17,7 @@ function TeacherList({ teacherList }) {
                             subject={t.subject}
                             qualification={t.qualification}
                             experience={t.experience}
-
+                            link={"/teacher/" + t.slug + '/' + t.id}
                         ></Teacher>
                     </div>
                 )}

@@ -1,4 +1,5 @@
 import { lastestTeacher } from "../Service/TeacherService"
+import TeacherBlock from "./TeacherBlock"
 import TeacherList from "./TeacherList"
 
 async function page() {
@@ -6,9 +7,9 @@ async function page() {
     const teacherList = await lastestTeacher()
     return (
         <div>
-            <TeacherList
-                teacherList={teacherList}
-            ></TeacherList>
+            <TeacherBlock
+                initialTeacherList={teacherList}
+            ></TeacherBlock>
         </div>
     )
 }
