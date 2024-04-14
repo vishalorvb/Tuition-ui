@@ -8,14 +8,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Button, IconButton } from '@mui/material';
 import { Drawer } from '@mui/material'
 import { useSession } from 'next-auth/react';
-import { login } from '@/app/Service';
+
 
 function Navbar() {
 
     const [drawer, setDrawer] = useState(false)
     let { status } = useSession()
     let data = useSession()
-
+    console.log(data)
     //{
     //    1: always
     //    2:when login

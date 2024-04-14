@@ -35,7 +35,7 @@ export async function login(data) {
         data: data,
         url: `${baseUrl}/usermanager/login`
     }).then(res => {
-        return { opration: true, message: res.data.message, info: res.data }
+        return { opration: true, message: res.data.message, info: res.data.data }
     }).catch(err => {
         return { opration: false, message: err.response.data.message }
     })

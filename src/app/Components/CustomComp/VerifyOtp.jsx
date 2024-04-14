@@ -1,21 +1,21 @@
 "use client"
-import { Grid } from "@mui/material"
 import styles from "../../Css/form.module.css"
 import FormPage from "../CustomComp/FormPage"
-import Link from "next/link"
-import { useRouter } from "next/navigation";
 import useGlobal from "../Hooks/useGlobal";
 import { useState } from "react"
-import { getotp, login } from "@/app/Service"
+import { login } from "@/app/Service"
 import { signIn } from "next-auth/react"
+import { redirect, useRouter } from "next/navigation";
 
 function VerifyOtp({ phone_number }) {
 
     const [otp, setOtp] = useState()
     const { setSnackbarData } = useGlobal();
+    const router = useRouter();
 
     function handleSignin(data) {
-        if (data.Full_name != undefined && data.access != undefined && data.refresh != undefined && data.roleId != undefined) {
+        console.log(data)
+        if (data.Full_name != undefined && data.access != undefined && data.roleId != undefined) {
             signIn('credentials', data)
         }
 
@@ -32,6 +32,7 @@ function VerifyOtp({ phone_number }) {
                     message: res.message,
                     severity: "success",
                 })
+
             }
             else {
                 setSnackbarData({

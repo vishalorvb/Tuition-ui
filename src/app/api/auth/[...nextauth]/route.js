@@ -8,7 +8,14 @@ export const authOptions = {
             name: 'Credentials',
             credentials: {},
             async authorize(credentials) {
-                let user = { name: credentials.Full_name, refresh: credentials.refresh, access: credentials.access, role: credentials.roleId }
+                let user = {
+                    name: credentials.Full_name,
+                    refresh: credentials.refresh,
+                    access: credentials.access,
+                    role: credentials.roleId,
+                    id: credentials.userId
+
+                }
                 return user
             }
         })

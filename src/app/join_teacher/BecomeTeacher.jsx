@@ -54,7 +54,6 @@ function BecomeTeacher() {
         e.preventDefault()
         let payload = new FormData(f.current)
         payload = Object.fromEntries(payload)
-        console.log(payload)
         createTeacher(payload, data.access_token).then(res => {
             if (res.opration) {
                 setSnackbarData({
@@ -116,8 +115,7 @@ function BecomeTeacher() {
                                     <label >Experience:<span className="req">*</span></label>
                                     <input type="number" name="experience" pattern="[0-9]" placeholder="Experience in Year" required />
 
-                                    <label >Location:<span className="req">*</span></label>
-                                    <input type="text" name="location" placeholder="Location" required />
+
 
                                     <label >Qualification:<span className="req">*</span></label>
                                     <input type="text" name="qualification" placeholder="Ex-B.Tech in computer science" required />
@@ -136,6 +134,8 @@ function BecomeTeacher() {
                                     <label className={styles.inlinelable} > Both:</label>
                                     <input onChange={e => setOnline(true)} type="radio" name="mode" value="both" />
 
+                                    <label >Location:<span className="req">*</span></label>
+                                    <input disabled={!online} type="text" name="location" placeholder="Location" required />
 
                                     <label >Age:</label>
                                     <input type="number" name="age" pattern="[0-9]" placeholder="Your age" required />
