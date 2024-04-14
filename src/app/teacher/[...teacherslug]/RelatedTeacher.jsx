@@ -12,7 +12,7 @@ function RelatedTeacher({ teacherList }) {
                     <div key={t.id} className="col-12">
                         <Teacher
                             id={t.id}
-                            imgUrl={t.photo}
+                            imgUrl={t.photo ?? '/profilepic.png'}
                             name={t.name}
                             gender={t.gender}
                             location={t.location}

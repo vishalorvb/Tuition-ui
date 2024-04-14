@@ -1,8 +1,9 @@
 'use client'
 import styles from "../../Css/Table.module.css"
-import Smallbutton from "../MiniComp/Smallbutton"
+import Anchor from "../MiniComp/Anchor"
+import CallIcon from '@mui/icons-material/Call';
 
-function PostTable() {
+function PostTable({ tuitionList }) {
     return (
         <div>
             <div className={styles.tabledata}>
@@ -20,16 +21,14 @@ function PostTable() {
                             </tr>
                         </thead>
                         <tbody>
-
-                            <tr>
-                                <td>vishasl</td>
-                                <td>122455</td>
-                                <td className="link">found</td>
-                                <td><Smallbutton
-                                    onClick={e => console.log("hhelllo")}
-                                >Details</Smallbutton></td>
-                            </tr>
-
+                            {tuitionList.map(tut =>
+                                <tr key={tut.id}>
+                                    <td>{tut.student_name}</td>
+                                    <td> <CallIcon /> <a href={`tel:${tut.phone_number}`}>{tut.phone_number}</a></td>
+                                    <td className="link">found</td>
+                                    <td><Anchor link={`teacher-job/${tut.slug}/${tut.id}`}>Details</Anchor></td>
+                                </tr>
+                            )}
                         </tbody>
                     </table>
                 </div>

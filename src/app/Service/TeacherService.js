@@ -49,3 +49,14 @@ export async function searchTeacher(queryString, pageNumber = 1) {
         return { opration: false, data: [], message: err.response.data.message }
     })
 }
+
+
+export async function getunlockedTeacher(token) {
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    }
+    return await axios.get(`${baseUrl}/teacher/unlockedteacher`, { headers }).then(res => {
+        return res.data.data
+    }).catch(err => { })
+}

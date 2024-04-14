@@ -52,3 +52,23 @@ export async function unlockTuition(tuitionId, token) {
     })
 
 }
+
+export async function getMypost(token) {
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    }
+    return await axios.get(`${baseUrl}/tuition/getuserpost`, { headers }).then(res => {
+        return res.data.data
+    }).catch(err => { })
+}
+
+export async function getunlockedTuition(token) {
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    }
+    return await axios.get(`${baseUrl}/tuition/unlockedtuition`, { headers }).then(res => {
+        return res.data.data
+    }).catch(err => { })
+}

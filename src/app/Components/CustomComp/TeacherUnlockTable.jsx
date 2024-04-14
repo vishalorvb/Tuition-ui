@@ -1,8 +1,9 @@
 'use client'
 import styles from "../../Css/Table.module.css"
-import Smallbutton from "../MiniComp/Smallbutton"
+import Anchor from "../MiniComp/Anchor"
+import CallIcon from '@mui/icons-material/Call';
 
-function TeacherUnlockTable() {
+function TeacherUnlockTable({ teacherList }) {
     return (
         <div>
             <div className={styles.tabledata}>
@@ -13,25 +14,18 @@ function TeacherUnlockTable() {
                     <table className={styles.table}>
                         <thead>
                             <tr>
-                                <td>Posted Date</td>
-                                <td>Student Name</td>
+                                <td>Teacher Name</td>
                                 <td>Contact</td>
-                                <td>Status</td>
                                 <td>Details</td>
                             </tr>
                         </thead>
                         <tbody>
-
-                            <tr>
-                                <td>23-March-2024</td>
-                                <td>vishasl</td>
-                                <td>122455</td>
-                                <td className="link">found</td>
-                                <td><Smallbutton
-                                    onClick={e => console.log("hhelllo")}
-                                >Details</Smallbutton></td>
-                            </tr>
-
+                            {teacherList.map(t =>
+                                <tr key={t.id}>
+                                    <td>{t.name}</td>
+                                    <td><CallIcon /> <a href={`tel:${t.phone_number}`}>{t.phone_number}</a></td>
+                                    <td><Anchor link={`teacher/${t.slug}/${t.id}`}>Details</Anchor></td>
+                                </tr>)}
                         </tbody>
                     </table>
                 </div>

@@ -1,25 +1,25 @@
 import Link from "next/link"
 import styles from "../../Css/profile.module.css"
 
-function Profile({ name, email, mobile, imageUrl, editUrl }) {
+function Profile({ userInfo }) {
     return (
         <div>
             <div className={styles.userinfo}>
-                <Link href={editUrl} className={styles.edit_link}>Edit</Link>
-                <img src={imageUrl} alt="Profile Image" />
+                <Link href="/" className={styles.edit_link}>Edit</Link>
+                <img src={userInfo.profilepic} alt="Profile Image" />
                 <table className={styles.table}>
                     <tbody>
                         <tr>
                             <td>Name:</td>
-                            <td>{name}</td>
+                            <td>{userInfo.name}</td>
                         </tr>
                         <tr>
                             <td>Email:</td>
-                            <td>{email}</td>
+                            <td>{userInfo.email}</td>
                         </tr>
                         <tr>
                             <td>Mobile:</td>
-                            <td>{mobile}</td>
+                            <td>{userInfo.phone_number}</td>
                         </tr>
                     </tbody>
                 </table>
