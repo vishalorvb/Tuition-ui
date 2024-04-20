@@ -1,22 +1,29 @@
-import { Grid, Paper } from '@mui/material'
-import React from 'react'
+import styles from '../../Css/formpage.module.css'
 
-function FormPage({ children }) {
-    const backgroundImageUrl = 'sample.jpg'
+function FormPage({ AdHeading, AdList, imageUrl, children }) {
+
+    console.log(AdList)
     return (
-        <div>
-            <Grid container justifyContent="center">
-                <Grid item md={5} xs={0} sx={{ backgroundImage: `url(${backgroundImageUrl})`, backgroundSize: "cover", backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-
-
-                </Grid>
-                <Grid item md={5} xs={12}>
-
+        <div className={styles.main}>
+            <div className="row justify-content-center ">
+                <div className="col-lg-6 order-lg-last">
                     {children}
+                </div>
+                <div className="col-lg-6 order-lg-first">
+                    <div className={styles.left}>
+                        {imageUrl && <img src={imageUrl} alt="" />}
+                        {AdList &&
+                            <div className={styles.features}>
+                                <h1 className={styles["features-heading"]}>{AdHeading}</h1>
+                                <ul>
+                                    {AdList.map(l => <li key={l}>&#x27A9; {l}</li>)}
+                                </ul>
+                            </div>
+                        }
+                    </div>
+                </div>
 
-
-                </Grid>
-            </Grid>
+            </div>
         </div>
     )
 }

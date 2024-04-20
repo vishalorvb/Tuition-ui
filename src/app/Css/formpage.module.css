@@ -1,0 +1,50 @@
+.main {
+    margin: 4px;
+}
+
+.left {
+    padding: 50px;
+    background-color: var(--DarkBlue);
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 100%;
+}
+
+.left img {
+    width: 100%;
+    /* Ensure the image width fills the div */
+    height: 100%;
+    /* Allow the image height to adjust proportionally */
+    display: block;
+    /* Make sure the image behaves like a block element */
+}
+
+.features {
+    margin-bottom: 30px;
+}
+
+
+.features-heading {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+
+}
+
+.features ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-left: 15px;
+}
+
+.features li {
+
+    margin-bottom: 15px;
+    padding-left: 15px;
+}

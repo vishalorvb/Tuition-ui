@@ -8,7 +8,6 @@ import { useRouter } from "next/navigation"
 import useGlobal from '../Components/Hooks/useGlobal'
 import FormPage from '../Components/CustomComp/FormPage'
 import Button from '../Components/MiniComp/Button'
-import Smallbutton from '../Components/MiniComp/Smallbutton'
 import OutLineButton from '../Components/MiniComp/OutLineButton'
 
 
