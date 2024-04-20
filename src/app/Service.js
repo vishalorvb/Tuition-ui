@@ -49,22 +49,22 @@ export async function getPin(pin) {
 
 }
 
-export async function createTeacher(data, token) {
-    console.log(data)
-    return await axios({
-        method: 'post',
-        data: data,
-        url: `${baseUrl}/teacher/create_teacher`,
-        headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": 'multipart/form-data',
-        }
-    }).then(res => {
-        return { opration: true, message: res.data.message }
-    }).catch(err => {
-        return { opration: false, message: "Failed" }
-    })
-}
+//export async function createTeacher(data, token) {
+//    console.log(data)
+//    return await axios({
+//        method: 'post',
+//        data: data,
+//        url: `${baseUrl}/teacher/create_teacher`,
+//        headers: {
+//            Authorization: `Bearer ${token}`,
+//            "Content-Type": 'multipart/form-data',
+//        }
+//    }).then(res => {
+//        return { opration: true, message: res.data.message }
+//    }).catch(err => {
+//        return { opration: false, message: "Failed" }
+//    })
+//}
 
 export async function postTuition(data, token) {
     return await axios({

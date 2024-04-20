@@ -6,7 +6,7 @@ function Profile({ userInfo }) {
     return (
         <div>
             <div className={styles.userinfo}>
-                <Link href="/" className={styles.edit_link}>Edit</Link>
+                <Link href="/profile/edit" className={styles.edit_link}>Edit</Link>
                 <img src={userInfo.profilepic ?? '/profilepic.png'} alt="Profile Image" />
                 <table className={styles.table}>
                     <tbody>
@@ -16,7 +16,8 @@ function Profile({ userInfo }) {
                         </tr>
                         <tr>
                             <td>Email:</td>
-                            <td>{userInfo.email}</td>
+                            <td>{userInfo.email}
+                            </td>
                         </tr>
                         <tr>
                             <td>Mobile:</td>

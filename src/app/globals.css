@@ -100,3 +100,9 @@ input[type="submit"]:hover {
     padding: .2rem;
     color: var(--SecondryText);
 }
+
+.profilepic {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+}

@@ -3,13 +3,13 @@ import styles from '../../Css/footer.module.css'
 function Footer() {
     return (
         <footer className={styles.footer}>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-3">
                         <h3>About Us</h3>
                         <p>We're an online platform that matches students with teachers for one-on-one tutoring. Our user-friendly interface makes finding the right tutor easy and convenient. Join us today!</p>
                     </div>
-                    <div class="col-md-3">
+                    <div className="col-md-3">
                         <h3>Quick Links</h3>
                         <ul>
                             <li><a href="#">Refund Policy</a></li>
@@ -19,7 +19,7 @@ function Footer() {
 
                         </ul>
                     </div>
-                    <div class="col-md-3">
+                    <div className="col-md-3">
                         <h3>Support</h3>
                         <ul>
                             <li><a href="#">FAQ</a></li>
@@ -28,17 +28,17 @@ function Footer() {
                             <li><a href="#">Privacy Policy</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-3">
+                    <div className="col-md-3">
                         <h3>Contact Us</h3>
                         <ul>
-                            <li><i class="fa fa-map-marker"></i>123 Main Street, Anytown USA</li>
-                            <li><i class="fa fa-phone"></i><a href="tel:+4733378901">+47 333 78 901</a></li>
-                            <li><i class="fa fa-envelope"></i>info@yourwebsite.com</li>
+                            <li><i className="fa fa-map-marker"></i>123 Main Street, Anytown USA</li>
+                            <li><i className="fa fa-phone"></i><a href="tel:+4733378901">+47 333 78 901</a></li>
+                            <li><i className="fa fa-envelope"></i>info@yourwebsite.com</li>
                         </ul>
                     </div>
                 </div>
                 <hr />
-                <p class="text-center">&copy; 2023 Your Website Name. All rights reserved.</p>
+                <p className="text-center">&copy; 2023 Your Website Name. All rights reserved.</p>
             </div>
         </footer>
     )

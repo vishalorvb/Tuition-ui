@@ -1,0 +1,33 @@
+.btn {
+    display: flex;
+}
+
+
+.upload {
+    visibility: hidden;
+    height: 0px;
+}
+
+.uploadbtn {
+    background-color: var(--DarkBlue);
+    display: inline-block;
+    color: white;
+    padding: 4px 1rem;
+    border-radius: 5px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.cancelbtn {
+    border: 1.5px solid var(--DarkBlue);
+    padding: 4px 1rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.img {
+    height: 20px;
+    width: 20px;
+}
