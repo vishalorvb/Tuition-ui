@@ -23,7 +23,7 @@ function TuitionUnlockTable({ tuitionList }) {
                         </thead>
                         <tbody>
 
-                            {tuitionList.map(tut =>
+                            {tuitionList?.map(tut =>
                                 <tr key={tut.id}>
                                     <td>{tut.posted_date}</td>
                                     <td>{tut.student_name}</td>
@@ -35,6 +35,8 @@ function TuitionUnlockTable({ tuitionList }) {
                         </tbody>
                     </table>
                 </div>
+                {tuitionList?.length == 0 && <p className="endmessage">No post</p>}
+
             </div>
         </div>
     )

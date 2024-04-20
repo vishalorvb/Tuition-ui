@@ -1,11 +1,21 @@
 import React from 'react'
 import Login from '../Components/PageComp/Login'
 import Loginpage from './Loginpage'
+import { getServerSession } from 'next-auth';
+import { authOptions } from '../api/auth/[...nextauth]/route';
+import { redirect } from "next/navigation";
 
-function page() {
+async function page() {
+
+
+
+    const session = await getServerSession(authOptions)
+
+    if (session !== null) {
+        redirect("/profile");
+    }
     return (
         <div>
-            {/*<Login></Login>*/}
             <Loginpage></Loginpage>
         </div>
     )

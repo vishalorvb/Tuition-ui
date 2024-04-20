@@ -18,6 +18,12 @@ function Login() {
     const [sendOtp, setSendOtp] = useState(false)
 
 
+    const adList = [
+        " Find Freelancing Teacher Jobs",
+        "Post Tuitions for Free",
+        "Get 3 Free Demo Classes",
+        "Discover Qualified and Verified Teachers",
+    ]
 
 
 
@@ -45,25 +51,31 @@ function Login() {
 
     return (
         <div>
-            <Grid container justifyContent="center">
-                <Grid item md={10} sx={10}>
-                    {sendOtp == false && <FormPage>
-                        <div className="form">
-                            <form onSubmit={e => handleSubmit(e)} >
-                                <h1 className={styles.heading}>Login</h1>
-                                <label >Phone Number:</label>
-                                <input
-                                    onChange={e => setPhoneNumber(e.target.value)}
-                                    type="tel" name="phone_number" pattern="[0-9]{10}" placeholder="10 Digit Phone Number" required />
-                                <input
-                                    type="submit" value="GET OTP"></input>
-                                <p>Not a member? <Link href="/registration">Register</Link> </p>
-                            </form>
-                        </div>
-                    </FormPage>}
-                    {sendOtp && <VerifyOtp phone_number={phone_number}></VerifyOtp>}
-                </Grid>
-            </Grid>
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        {sendOtp == false &&
+                            <FormPage
+                                AdHeading="Welcome Back!"
+                                AdList={adList}
+                            >
+                                <div className="form">
+                                    <form onSubmit={e => handleSubmit(e)} >
+                                        <h1 className={styles.heading}>Login</h1>
+                                        <label >Phone Number:</label>
+                                        <input
+                                            onChange={e => setPhoneNumber(e.target.value)}
+                                            type="tel" name="phone_number" pattern="[0-9]{10}" placeholder="10 Digit Phone Number" required />
+                                        <input
+                                            type="submit" value="GET OTP"></input>
+                                        <p>Not a member? <Link href="/registration">Register</Link> </p>
+                                    </form>
+                                </div>
+                            </FormPage>}
+                        {sendOtp && <VerifyOtp phone_number={phone_number}></VerifyOtp>}
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

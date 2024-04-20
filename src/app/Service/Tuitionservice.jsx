@@ -72,3 +72,20 @@ export async function getunlockedTuition(token) {
         return res.data.data
     }).catch(err => { })
 }
+
+
+export async function changeStatus(tuitionId, token) {
+    return axios({
+        method: 'POST',
+        data: { "tuition_id": tuitionId },
+        url: `${baseUrl}/tuition/changeStatus`,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    }).then(res => {
+        return { status: true, message: res.data.message }
+    }).catch(err => {
+        return { status: false, message: "Something went wrong" }
+    })
+}

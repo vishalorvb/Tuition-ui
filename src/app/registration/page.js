@@ -1,8 +1,17 @@
 import React from 'react'
 import Register from '../Components/PageComp/Register'
 import Header from '../Components/CustomComp/Header'
+import { authOptions } from '../api/auth/[...nextauth]/route';
+import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
 
-function page() {
+async function page() {
+
+    const session = await getServerSession(authOptions)
+
+    if (session !== null) {
+        redirect("/profile");
+    }
     return (
         <div>
             <div className='container'>

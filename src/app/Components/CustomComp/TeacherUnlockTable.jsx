@@ -8,7 +8,7 @@ function TeacherUnlockTable({ teacherList }) {
         <div>
             <div className={styles.tabledata}>
                 <div className={styles.tableheading}>
-                    <h4>Your Post</h4>
+                    <h4>Viewed Teacher</h4>
                 </div>
                 <div>
                     <table className={styles.table}>
@@ -20,7 +20,7 @@ function TeacherUnlockTable({ teacherList }) {
                             </tr>
                         </thead>
                         <tbody>
-                            {teacherList.map(t =>
+                            {teacherList?.map(t =>
                                 <tr key={t.id}>
                                     <td>{t.name}</td>
                                     <td><CallIcon /> <a href={`tel:${t.phone_number}`}>{t.phone_number}</a></td>
@@ -29,6 +29,7 @@ function TeacherUnlockTable({ teacherList }) {
                         </tbody>
                     </table>
                 </div>
+                {teacherList?.length == 0 && <p className="endmessage">No post</p>}
             </div>
         </div>
     )

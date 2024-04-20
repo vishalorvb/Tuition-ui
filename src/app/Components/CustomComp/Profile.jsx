@@ -2,16 +2,17 @@ import Link from "next/link"
 import styles from "../../Css/profile.module.css"
 
 function Profile({ userInfo }) {
+
     return (
         <div>
             <div className={styles.userinfo}>
                 <Link href="/" className={styles.edit_link}>Edit</Link>
-                <img src={userInfo.profilepic} alt="Profile Image" />
+                <img src={userInfo.profilepic ?? '/profilepic.png'} alt="Profile Image" />
                 <table className={styles.table}>
                     <tbody>
                         <tr>
                             <td>Name:</td>
-                            <td>{userInfo.name}</td>
+                            <td>{userInfo.Full_name}</td>
                         </tr>
                         <tr>
                             <td>Email:</td>

@@ -1,6 +1,6 @@
 "use client"
 
-import { useSession, getSession } from "next-auth/react"
+import { useSession } from "next-auth/react"
 import Login from "../Components/PageComp/Login"
 function Loginpage() {
 
@@ -11,6 +11,12 @@ function Loginpage() {
                 <p>loading...</p>
             </div>}
             {status == "unauthenticated" && <div>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                        </div>
+                    </div>
+                </div>
                 <Login></Login>
             </div>}
             {status == "authenticated" && <div>

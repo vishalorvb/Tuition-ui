@@ -15,7 +15,7 @@ function Navbar() {
     const [drawer, setDrawer] = useState(false)
     let { status } = useSession()
     let data = useSession()
-    console.log(data)
+    //console.log(data)
     //{
     //    1: always
     //    2:when login
