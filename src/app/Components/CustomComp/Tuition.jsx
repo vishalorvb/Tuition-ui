@@ -6,8 +6,9 @@ import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import styles from "../../Css/tuition.module.css"
 import Anchor from '../MiniComp/Anchor';
+import Call from "../CustomComp/Call"
 
-function Tuition({ imgUrl, name, description, course, subject, date, location, verify, link }) {
+function Tuition({ imgUrl, name, description, course, subject, date, location, verify, link, phoneNumber }) {
     return (
         <div className={styles.main}>
             <div className={styles.tuition}>
@@ -21,7 +22,7 @@ function Tuition({ imgUrl, name, description, course, subject, date, location, v
                         </div>
                         <div className="col-10">
                             <div className={styles.name}>
-                                <h4>{name}</h4>
+                                <h4>{name} {verify && <img className='icon' src="/verify.png" alt="" />}</h4>
                             </div>
                             <div className={styles.desc}>
                                 <p>{description}</p>
@@ -52,10 +53,12 @@ function Tuition({ imgUrl, name, description, course, subject, date, location, v
                 </div>
                 <div className={styles.bottom}>
                     <div className="row">
-                        <div className="col-9">
-                            {verify == true && <p><IconButton size='small' color='primary'><VerifiedOutlinedIcon /></IconButton>Tuition Verified</p>}
+                        <div className="col-6">
+                            <Call
+                                phoneNumber={phoneNumber}
+                            ></Call>
                         </div>
-                        <div className="col-3">
+                        <div className="col-6">
                             <Anchor link={link}>Details</Anchor>
                         </div>
                     </div>

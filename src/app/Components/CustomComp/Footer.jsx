@@ -38,7 +38,7 @@ function Footer() {
                     </div>
                 </div>
                 <hr />
-                <p className="text-center">&copy; 2023 Your Website Name. All rights reserved.</p>
+                <p className="text-center">&copy; 2023, Born in Bharat <img className={styles.flag} src="/flag.png" alt="" /></p>
             </div>
         </footer>
     )

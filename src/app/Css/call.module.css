@@ -1,0 +1,12 @@
+.main {
+    border: 1.5px solid var(--LightBlue);
+    display: inline-block;
+    padding: 4px;
+    border-radius: 5px;
+    color: var(--LightBlue);
+}
+
+.main a {
+    text-decoration: none;
+    color: var(--LightBlue);
+}

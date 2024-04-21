@@ -36,6 +36,7 @@ export async function getTuitionDetails(tuitionId, token = null) {
 }
 
 export async function unlockTuition(tuitionId, token) {
+    console.log("api called")
     return axios({
         method: 'POST',
         data: { "tuition_id": tuitionId },

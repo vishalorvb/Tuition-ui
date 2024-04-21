@@ -4,23 +4,26 @@ import { useState } from 'react';
 import styles from '../../Css/tuitionunlockbtn.module.css'
 import CallIcon from '@mui/icons-material/Call';
 import { useSession } from 'next-auth/react';
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 import { unlockTuition } from '@/app/Service/Tuitionservice';
 import useGlobal from '../Hooks/useGlobal';
+
 
 
 
 function TuitionUnclockBtn({ phoneNumber, tuitionId }) {
 
     const [phone, setPhone] = useState(phoneNumber)
+    const router = useRouter();
     let data = useSession()
     const { setSnackbarData } = useGlobal()
     function handleClick(e) {
+        console.log(data.status)
         if (data.status == "loading") {
             return;
         }
         if (data.status != "authenticated") {
-            redirect("/login");
+            return router.push("/login")
         }
         unlockTuition(tuitionId, data.data.access_token).then(res => {
             if (res.contact != null) {

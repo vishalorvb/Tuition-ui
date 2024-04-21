@@ -19,6 +19,7 @@ function TuitionList({ tuitionList }) {
                                 location={tut.locality}
                                 verify={tut.verify}
                                 link={"/teacher-job/" + tut.slug + '/' + tut.id}
+                                phoneNumber={tut.phone_number}
                             ></Tuition>
                         </div>
                     )}

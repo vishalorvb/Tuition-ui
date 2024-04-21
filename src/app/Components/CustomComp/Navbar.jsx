@@ -61,7 +61,11 @@ function Navbar() {
                         }).map(nav => <li key={nav.id}><Link href={nav.link}>{nav.tag}</Link></li>)}
                     </ul>
                 </div>
-                <div className={styles.btn}>
+                <div className={styles.btn}
+                    onClick={e => {
+                        router.push("/home-tuition")
+                    }}
+                >
                     <Button variant="outlined" sx={{ color: "inherit", background: "white" }} size="small">Book Free Demo</Button>
 
                 </div>

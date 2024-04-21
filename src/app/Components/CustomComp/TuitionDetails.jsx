@@ -83,7 +83,7 @@ function TuitionDetails({ tuition }) {
                     <div className="row">
                         <div className="col d-flex justify-content-center">
                             <TuitionUnclockBtn
-                                phoneNumber={tuition.phone_number}
+                                //phoneNumber={tuition.phone_number}
                                 tuitionId={tuition.id}
                             ></TuitionUnclockBtn>
                         </div>

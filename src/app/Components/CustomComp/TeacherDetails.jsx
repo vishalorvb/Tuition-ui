@@ -59,7 +59,7 @@ function TeacherDetails({ imgUrl, name, gender, age, qualification, about, subje
             <div className="row justify-content-center">
                 <div className="col-3">
                     <TeacherUnlockbtn
-                        phoneNumber={phone_number}
+                        //phoneNumber={phone_number}
                         teacherId={teacherId}
                     ></TeacherUnlockbtn>
                 </div>

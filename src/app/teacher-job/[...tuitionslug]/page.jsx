@@ -30,9 +30,6 @@ async function page({ params }) {
                             subHeading="Get  free demo classes when you post your tuition requirements! Experience top-quality teaching firsthand and find your perfect match hassle-free. Don't wait, start learning with us today!"
                         ></Header>
                     </div>
-                    <div className="col-12">
-                        <p>Note: Each unlock(view of contact) reduce your credit point by 1</p>
-                    </div>
                 </div>
                 <div className="row">
                     <div className="col-lg-8">

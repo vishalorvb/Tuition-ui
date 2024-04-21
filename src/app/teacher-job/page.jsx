@@ -7,7 +7,7 @@ async function Page() {
     let t = await getLatestTuition()
     let tuition = t.data
     return (
-        <div>
+        <div className='container'>
             <TuitionBlock
                 initialTuitionList={tuition}
                 redirectOnsearchurl={"/teacher-job/home-tuition/"}

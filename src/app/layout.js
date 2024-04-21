@@ -20,9 +20,14 @@ export default function RootLayout({ children }) {
             <body className={inter.className}>
                 <GlobalContextProvider>
                     <NextAuthSessionProvider>
+
                         <Navbar></Navbar>
+
                         {children}
+
                         <Footer></Footer>
+
+
                         <GlobalSnackBar></GlobalSnackBar>
                     </NextAuthSessionProvider>
                 </GlobalContextProvider>

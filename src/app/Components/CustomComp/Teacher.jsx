@@ -4,8 +4,9 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import styles from "../../Css/teacher.module.css"
 import Anchor from '../MiniComp/Anchor';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
+import Call from './Call';
 
-function Teacher({ imgUrl, name, gender, location, subject, qualification, experience, link }) {
+function Teacher({ imgUrl, name, gender, location, subject, qualification, experience, link, phoneNumber }) {
     return (
         <div className={styles.main}>
             <div className={styles.tuition}>
@@ -29,10 +30,15 @@ function Teacher({ imgUrl, name, gender, location, subject, qualification, exper
                     </div>
                 </div>
                 <div className="row justify-content-between">
-                    <div className="col">
+                    <div className="col-12">
                         <div className={styles.bottom}>
                             <p><IconButton size='small'><LocationOnOutlinedIcon /> </IconButton>{location}</p>
                         </div>
+                    </div>
+                    <div className="col">
+                        <Call
+                            phoneNumber={phoneNumber}
+                        ></Call>
                     </div>
                     <div className="col">
                         <div className={styles.bottom}>
