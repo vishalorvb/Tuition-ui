@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Teacher from '../Components/CustomComp/Teacher'
 
 function TeacherList({ teacherList }) {

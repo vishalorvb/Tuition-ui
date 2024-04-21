@@ -3,8 +3,10 @@
 import { Grid } from "@mui/material"
 import styles from "../../../Css/home.module.css"
 import TranparentButton from "../../MiniComp/TranparentButton"
+import { useRouter } from "next/navigation";
 
 function Carousel() {
+    const router = useRouter();
     return (
         <div className={styles.main}>
             <div className={styles["video-container"]}>
@@ -22,7 +24,7 @@ function Carousel() {
                         <p>Discover the Perfect Tutor for Your Learning Journey</p>
                         <div className={styles.btn}>
                             <TranparentButton
-                                onClick={e => console.log("hello")}
+                                onClick={e => router.push("/registration")}
                             >Get Started</TranparentButton>
                         </div>
 

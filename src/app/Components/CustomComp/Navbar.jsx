@@ -8,6 +8,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Button, IconButton } from '@mui/material';
 import { Drawer } from '@mui/material'
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+
 
 
 function Navbar() {
@@ -15,7 +17,7 @@ function Navbar() {
     const [drawer, setDrawer] = useState(false)
     let { status } = useSession()
     let data = useSession()
-    //console.log(data)
+    const router = useRouter();
     //{
     //    1: always
     //    2:when login
@@ -39,7 +41,11 @@ function Navbar() {
     return (
         <div>
             <div className={styles.navbar}>
-                <div className={styles.logo}><img src="/logo.jpg" alt='logo' /></div>
+                <div className={styles.logo}
+                    onClick={e => {
+                        router.push("/")
+                    }}
+                ><img src="/logo.jpg" alt='logo' /></div>
                 <div className={styles["hamburger-icon"]}>
                     <IconButton
                         color='inherit'
@@ -71,7 +77,8 @@ function Navbar() {
                             <h6><IconButton
                                 color='inherit'
                                 onClick={() => setDrawer(false)}
-                            ><CloseIcon></CloseIcon></IconButton>Welcome!</h6>
+                            ><CloseIcon></CloseIcon></IconButton>Hi!,{data?.data?.name?.split(' ')[0] ?? ""}
+                            </h6>
                         </div>
 
 
@@ -81,7 +88,13 @@ function Navbar() {
                                     if (nav.open == 1) return true
                                     if (nav.open == 2 && status == "authenticated") return true
                                     if (nav.open == 3 && status == "unauthenticated") return true
-                                }).map(nav => <li key={nav.id}><Link href={nav.link}>{nav.tag}</Link></li>)}
+                                }).map(nav =>
+                                    <li
+                                        key={nav.id}
+                                        onClick={() => setDrawer(false)}
+                                    >
+                                        <Link href={nav.link}>{nav.tag}</Link>
+                                    </li>)}
                             </ul>
                         </div>
                     </div>

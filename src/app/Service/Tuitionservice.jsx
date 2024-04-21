@@ -7,7 +7,6 @@ export async function getLatestTuition(pageNumber = 1) {
     return await axios.get(`${baseUrl}/tuition/getLatesttuition/${pageNumber}`).then(res => {
         return ({ opration: true, data: res.data.data, message: res.message })
     }).catch(err => {
-        console.log(err)
         return { opration: false, data: [], message: err.message }
     })
 }

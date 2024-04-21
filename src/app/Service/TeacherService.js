@@ -5,7 +5,9 @@ let baseUrl = "http://localhost:8000";
 export async function lastestTeacher(pageNumber = 1) {
     return axios.get(`${baseUrl}/teacher/latestTeacher/${pageNumber}`).then(res => {
         return res.data.data
-    }).catch(err => { })
+    }).catch(err => {
+        return []
+    })
 }
 
 export async function unlockTeacher(teacherId, token) {
