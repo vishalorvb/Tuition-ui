@@ -10,9 +10,12 @@ import { getUserinfo } from '../Service/Userservice';
 async function page() {
 
     const session = await getServerSession(authOptions)
+    if (session === null) {
+        redirect("/login");
+    }
     const token = session.access_token
     const userData = await getUserinfo(token)
-    if (session === null || !userData) {
+    if (!userData) {
         redirect("/login");
     }
     if (userData.is_teacher) {

@@ -24,44 +24,39 @@ function TuitionBlock({ initialTuitionList, redirectOnsearchurl }) {
 
     return (
         <div >
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <Header
-                            heading={"Discover Limitless Learning Opportunities"}
-                            subHeading={` Empower your education journey with our platform that seamlessly
+            <div className="row">
+                <div className="col-12">
+                    <Header
+                        heading={"Discover Limitless Learning Opportunities"}
+                        subHeading={` Empower your education journey with our platform that seamlessly
                         connects students and teachers. Explore freelance teaching opportunities, post tuition listings for free,
                         and enjoy complimentary demo classes.`}
-                        ></Header>
-                    </div>
+                    ></Header>
                 </div>
-
-                <div className="row">
-                    <div className="col-3">
-                        <CityList
-                            baseUrl={url}
-                            heading={"Tuition in Top City"}
-                        ></CityList>
-
-                    </div>
-                    <div className="col-9">
-                        <div className="row justify-content-end" >
-                            <div className="col-12">
-                                <SearchBox
-                                    heading={"Find Tuition By: city , subject, courses etc"}
-                                    redirectUrl={redirectOnsearchurl}
-                                    getWord={words => {
-                                        handleSearch(words)
-                                    }}
-                                ></SearchBox>
-                            </div>
+            </div>
+            <div className="row">
+                <div className="col-lg-9 ">
+                    <div className="row justify-content-between" >
+                        <div className="col-10">
+                            <SearchBox
+                                heading={"Find Tuition By: city , subject, courses etc"}
+                                redirectUrl={redirectOnsearchurl}
+                                getWord={words => {
+                                    handleSearch(words)
+                                }}
+                            ></SearchBox>
                         </div>
-                        <TuitionList
-                            tuitionList={tuition}
-                        ></TuitionList>
                     </div>
+                    <TuitionList
+                        tuitionList={tuition}
+                    ></TuitionList>
                 </div>
-
+                <div className="col-lg-3 ">
+                    <CityList
+                        baseUrl={url}
+                        heading={"Tuition in Top City"}
+                    ></CityList>
+                </div>
             </div>
         </div>
     )
