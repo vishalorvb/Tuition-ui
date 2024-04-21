@@ -1,8 +1,6 @@
 import styles from '../../Css/formpage.module.css'
 
 function FormPage({ AdHeading, AdList, imageUrl, children }) {
-
-    console.log(AdList)
     return (
         <div className={styles.main}>
             <div className="row justify-content-center ">

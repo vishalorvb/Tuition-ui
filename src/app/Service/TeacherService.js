@@ -41,6 +41,18 @@ export async function getTeacherDetails(teacherId, token = null) {
         })
 }
 
+export async function getTeacherinfo(token) {
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    }
+    return await axios.get(`${baseUrl}/teacher/getTecher_info`, { headers }).then(res => {
+        return res.data;
+    }).catch(err => {
+        return null
+    })
+
+}
 
 export async function searchTeacher(queryString, pageNumber = 1) {
     return await axios.get(`${baseUrl}/teacher/search/${pageNumber}?query=${queryString}`).then(res => {
@@ -74,6 +86,22 @@ export async function createTeacher(data, token) {
     }).then(res => {
         return { opration: true, message: res.data.message }
     }).catch(err => {
-        return { opration: false, message: "Failed" }
+        return { opration: false, message: err.response.data.message }
+    })
+}
+
+export async function updateTeacher(data, token) {
+    return await axios({
+        method: "put",
+        url: `${baseUrl}/teacher/update_teacher_profile`,
+        data: data,
+        headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": 'multipart/form-data',
+        }
+    }).then(res => {
+        return { message: res.data.message, status: true }
+    }).catch(err => {
+        return { message: err.response.data.message, status: false }
     })
 }

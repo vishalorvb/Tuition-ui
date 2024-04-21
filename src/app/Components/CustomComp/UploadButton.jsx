@@ -41,7 +41,7 @@ function UploadButton({ onUpload, onCancel }) {
                 <div className={styles.uploadbtn}
                     onClick={e => file.current.click()}
                 >
-                    Upload
+                    Select
                 </div>
                 {showcancel && <div className={styles.cancelbtn}
                     onClick={e => {

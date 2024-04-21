@@ -21,6 +21,9 @@ async function page() {
     const unlockedTuition = await getunlockedTuition(token)
     const unlockedTeacher = await getunlockedTeacher(token)
     const userData = await getUserinfo(token)
+    if (!userData) {
+        redirect("/login");
+    }
     return (
         <div>
             <div className="container">
@@ -33,7 +36,7 @@ async function page() {
                     <div className="col">
                         <Card
                             heading="Credit Point"
-                            data={userData.credit_points}
+                            data={userData?.credit_points}
                         ></Card>
 
                     </div>

@@ -18,7 +18,6 @@ function EditProfile({ userInfo }) {
     function handleSubmit(e) {
         e.preventDefault()
         let payload = new FormData(f.current)
-        console.log(typeof selectedImage);
         if (imageFile != null) {
             payload.append('photo', imageFile);
         }
