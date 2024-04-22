@@ -1,0 +1,25 @@
+.photo img {
+
+    width: 100%;
+    max-height: 16rem;
+    object-fit: fill;
+    border-radius: 5px;
+}
+
+.main {
+    margin: .5rem;
+    padding: 2rem;
+}
+
+.text {}
+
+
+.heading {
+    padding: .2rem;
+    /*color: rgb(177, 35, 35);*/
+    font-weight: 400;
+}
+
+.desc {
+    color: var(--SecondryText);
+}
