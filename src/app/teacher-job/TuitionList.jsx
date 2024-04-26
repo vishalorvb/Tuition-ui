@@ -8,7 +8,7 @@ function TuitionList({ tuitionList }) {
             <div className="container">
                 <div className="row">
                     {tuitionList?.map(tut =>
-                        <div key={tut.id} className="col-lg-6 col-sm-12">
+                        <div key={tut.id} className="col-lg-6 col-sm-12 align-self-center">
                             <Tuition
                                 imgUrl={'/logo.jpg'}
                                 name={tut.student_name}

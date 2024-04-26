@@ -7,12 +7,28 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from "next/navigation"
 import useGlobal from '../Components/Hooks/useGlobal'
 import FormPage from '../Components/CustomComp/FormPage'
-import Button from '../Components/MiniComp/Button'
-import OutLineButton from '../Components/MiniComp/OutLineButton'
 import { createTeacher, updateTeacher } from '../Service/TeacherService'
 import UploadButton from '../Components/CustomComp/UploadButton'
 
 function BecomeTeacher({ teacherInfo }) {
+
+    const list = [
+        "Free Registration",
+        "Direct Student Contact",
+        "Expand Your Reach to Students",
+        "Flexible Teaching Options",
+        "Keep 100% of Your Earnings",
+        "Receive Verified Student Requests",
+        "Access Student Profiles",
+        "Build Your Reputation with Ratings",
+        "Connect with a Teaching Community",
+        "Showcase Your Profile to Students",
+        "Receive Contact Requests from Students",
+        "Set Your Own Tuition Rates",
+        "Receive Notifications for New Opportunities",
+        "Gain Exposure to a Diverse Student Base",
+        "Enhance Your Teaching Skills",
+    ]
 
     const { data } = useSession()
     const { setSnackbarData } = useGlobal();
@@ -29,7 +45,6 @@ function BecomeTeacher({ teacherInfo }) {
         e.preventDefault()
         let payload = new FormData(f.current)
         //payload = Object.fromEntries(payload)
-        console.log(selectedpin)
         payload.append("pincode", selectedpin?.Pincode ?? selectedpin)
         payload.append('photo', selectedImage);
         if (teacherInfo == undefined) {
@@ -80,7 +95,10 @@ function BecomeTeacher({ teacherInfo }) {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <FormPage>
+                        <FormPage
+                            AdHeading="What makes joining as a teacher worthwhile?"
+                            AdList={list}
+                        >
                             <div className="form">
                                 <h4 className={styles.heading}>Become an educator with us and make a difference! </h4>
                                 <div className={styles.photo}>

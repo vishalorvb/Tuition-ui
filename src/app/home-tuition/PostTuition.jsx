@@ -10,6 +10,21 @@ import useGlobal from "../Components/Hooks/useGlobal"
 
 function PostTuition() {
 
+    const list = [
+        "Connect with Local and Online Teachers",
+        "Find Teachers for Any Subject or Level",
+        "Post Tuition for Free",
+        "Direct Contact with Teachers",
+        "Free Demo Class Included",
+        "Wide Range of Qualified Teachers",
+        "Personalized Learning Experience",
+        "Quality Assurance on Tuition Postings",
+        "User-Friendly Platform",
+        "Flexible Learning Options",
+        "Responsive Customer Support",
+        "Start Your Learning Journey Today"
+    ]
+
     const [pincode, setPincode] = useState([])
     const [selectedpin, setSelectedPin] = useState(0)
     const [online, setOnline] = useState(true)
@@ -23,7 +38,14 @@ function PostTuition() {
         e.preventDefault()
         let payload = new FormData(f.current)
         payload = Object.fromEntries(payload)
-
+        if (data === null) {
+            setSnackbarData({
+                status: true,
+                message: "Login Required",
+                severity: "warning",
+            })
+            return
+        }
         postTuition(payload, data?.access_token).then(res => {
             if (res.opration) {
                 setSnackbarData({
@@ -49,7 +71,10 @@ function PostTuition() {
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <FormPage>
+                        <FormPage
+                            AdHeading="Post for Free with No Hidden Charges!"
+                            AdList={list}
+                        >
 
                             <div className="form">
                                 <h1 className={styles.heading}>Post your requiment</h1>

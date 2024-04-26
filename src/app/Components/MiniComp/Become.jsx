@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import styles from '../../Css/become.module.css'
 
-function Become() {
+function Become({ url, name }) {
     return (
         <div className={styles.main}>
-            <Link href="/join_teacher"> Join as Teacher &#8594;</Link>
+            <Link href={url}> {name} &#8594;</Link>
         </div>
     )
 }
