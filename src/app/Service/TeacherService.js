@@ -1,6 +1,6 @@
 import axios from "axios";
-
-let baseUrl = "http://localhost:8000";
+//import { ApiUrl as baseUrl } from "@/Environment";
+const baseUrl = "http://localhost:8000"
 
 export async function lastestTeacher(pageNumber = 1) {
     return axios.get(`${baseUrl}/teacher/latestTeacher/${pageNumber}`).then(res => {

@@ -1,6 +1,6 @@
 import axios from "axios";
-
-let baseUrl = "http://localhost:8000";
+import { ApiUrl as BU } from "@/Environment";
+const baseUrl = "http://localhost:8000"
 
 
 export async function getLatestTuition(pageNumber = 1) {

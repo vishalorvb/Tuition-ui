@@ -2,13 +2,14 @@
 
 import { useSession } from "next-auth/react"
 import Login from "../Components/PageComp/Login"
+import WaveSkeleton from "../Components/CustomComp/WaveSkeleton"
 function Loginpage() {
 
     let { status } = useSession()
     return (
         <div>
             {status == "loading" && <div>
-                <p>loading...</p>
+                <WaveSkeleton></WaveSkeleton>
             </div>}
             {status == "unauthenticated" && <div>
                 <div className="container">

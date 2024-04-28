@@ -11,7 +11,7 @@ import { useRouter } from "next/navigation";
 function EditProfile({ userInfo }) {
     const { setSnackbarData } = useGlobal();
     const router = useRouter()
-    const [selectedImage, setSelectedImage] = useState(userInfo.profilepic);
+    const [selectedImage, setSelectedImage] = useState(userInfo?.profilepic);
     const [imageFile, setImagefile] = useState(null)
     const { data } = useSession()
     const f = useRef()

@@ -1,8 +1,7 @@
 import axios from "axios";
+import { ApiUrl } from "@/Environment";
 
-let baseUrl = "http://localhost:8000";
-
-
+const baseUrl = "http://localhost:8000"
 
 export async function getUserinfo(token) {
     const headers = {
@@ -31,4 +30,28 @@ export async function updateUser(data, token) {
         return { message: err.response.data.message, status: false }
     })
 
+}
+
+export async function getotp(data) {
+    return await axios({
+        method: "post",
+        data: data,
+        url: `${baseUrl}/usermanager/sendOtp`
+    }).then(res => {
+        return { opration: true, message: res.data.message }
+    }).catch(err => {
+        return { opration: false, message: "Somethin went wrong" }
+    })
+}
+
+export async function login(data) {
+    return await axios({
+        method: "post",
+        data: data,
+        url: `${baseUrl}/usermanager/login`
+    }).then(res => {
+        return { opration: true, message: res.data.message, info: res.data.data }
+    }).catch(err => {
+        return { opration: false, message: err.response.data.message }
+    })
 }

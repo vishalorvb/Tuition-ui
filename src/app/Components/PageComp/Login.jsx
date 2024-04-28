@@ -1,14 +1,12 @@
 
 "use client"
-import { Grid } from "@mui/material"
 import styles from "../../Css/form.module.css"
 import FormPage from "../CustomComp/FormPage"
 import Link from "next/link"
-import { useRouter } from "next/navigation";
 import useGlobal from "../Hooks/useGlobal";
 import { useState } from "react"
-import { getotp, login } from "@/app/Service"
-import { signIn } from "next-auth/react"
+import { getotp } from "@/app/Service/Userservice"
+
 import VerifyOtp from "../CustomComp/VerifyOtp"
 
 function Login() {

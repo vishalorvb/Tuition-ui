@@ -1,6 +1,8 @@
+import { ApiUrl as BU } from "@/Environment";
 import axios from "axios";
 
-let baseUrl = "http://localhost:8000";
+const baseUrl = "http://localhost:8000"
+
 
 
 export async function createUser(data) {
@@ -16,55 +18,18 @@ export async function createUser(data) {
 }
 
 
-export async function getotp(data) {
-    return await axios({
-        method: "post",
-        data: data,
-        url: `${baseUrl}/usermanager/sendOtp`
-    }).then(res => {
-        return { opration: true, message: res.data.message }
-    }).catch(err => {
-        return { opration: false, message: err.response.data.message ?? "Somethin went wrong" }
-    })
-}
 
 
-export async function login(data) {
-    return await axios({
-        method: "post",
-        data: data,
-        url: `${baseUrl}/usermanager/login`
-    }).then(res => {
-        return { opration: true, message: res.data.message, info: res.data.data }
-    }).catch(err => {
-        return { opration: false, message: err.response.data.message }
-    })
-}
 
 
 export async function getPin(pin) {
+    console.log(BU)
     return await axios.get(`${baseUrl}/getPincode?pincode=${pin}`).then(res => {
         return res.data
     }).catch(err => console.log(err))
 
 }
 
-//export async function createTeacher(data, token) {
-//    console.log(data)
-//    return await axios({
-//        method: 'post',
-//        data: data,
-//        url: `${baseUrl}/teacher/create_teacher`,
-//        headers: {
-//            Authorization: `Bearer ${token}`,
-//            "Content-Type": 'multipart/form-data',
-//        }
-//    }).then(res => {
-//        return { opration: true, message: res.data.message }
-//    }).catch(err => {
-//        return { opration: false, message: "Failed" }
-//    })
-//}
 
 export async function postTuition(data, token) {
     return await axios({

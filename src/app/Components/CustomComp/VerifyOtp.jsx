@@ -3,9 +3,9 @@ import styles from "../../Css/form.module.css"
 import FormPage from "../CustomComp/FormPage"
 import useGlobal from "../Hooks/useGlobal";
 import { useState } from "react"
-import { login } from "@/app/Service"
 import { signIn } from "next-auth/react"
 import { redirect, useRouter } from "next/navigation";
+import { login } from "@/app/Service/Userservice";
 
 function VerifyOtp({ phone_number }) {
 

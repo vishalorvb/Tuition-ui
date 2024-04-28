@@ -4,12 +4,12 @@ function Footer() {
     return (
         <footer className={styles.footer}>
             <div className="container">
-                <div className="row">
-                    <div className="col-md-3">
+                <div className="row justify-content-around">
+                    <div className="col-md-4">
                         <h3>About Us</h3>
                         <p>We're an online platform that matches students with teachers for one-on-one tutoring. Our user-friendly interface makes finding the right tutor easy and convenient. Join us today!</p>
                     </div>
-                    <div className="col-md-3">
+                    {/*<div className="col-md-3">
                         <h3>Quick Links</h3>
                         <ul>
                             <li><a href="#">Refund Policy</a></li>
@@ -18,8 +18,8 @@ function Footer() {
                             <li><a href="#">Contact Us</a></li>
 
                         </ul>
-                    </div>
-                    <div className="col-md-3">
+                    </div>*/}
+                    {/*<div className="col-md-3">
                         <h3>Support</h3>
                         <ul>
                             <li><a href="#">FAQ</a></li>
@@ -27,8 +27,8 @@ function Footer() {
                             <li><a href="#">Terms of Service</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                         </ul>
-                    </div>
-                    <div className="col-md-3">
+                    </div>*/}
+                    <div className="col-md-4">
                         <h3>Contact Us</h3>
                         <ul>
                             <li><i className="fa fa-map-marker"></i>123 Main Street, Anytown USA</li>

@@ -7,13 +7,13 @@ import styles from '../../../Css/home.module.css'
 import TeacherList from '@/app/teacher/TeacherList'
 import { lastestTeacher } from '@/app/Service/TeacherService'
 
+
 async function Home() {
     let t = await getLatestTuition()
     let tuition = t.data
     const teacherList = await lastestTeacher()
     return (
         <div>
-
             <Carousel></Carousel>
             <Display
                 url='/beacome-teacher'
@@ -25,7 +25,7 @@ async function Home() {
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-10 align-self-center">
-                        <h4 className={styles.heading}>Latest Tuition for you</h4>
+                        <h4 className={styles.heading}>Tuition for you</h4>
                         <TuitionList
                             tuitionList={tuition.slice(0, 6)}
                         ></TuitionList>
@@ -43,7 +43,7 @@ async function Home() {
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-10 align-self-center">
-                        <h4 className={styles.heading}>Latest Teacher for you</h4>
+                        <h4 className={styles.heading}>Teacher for you</h4>
                         <TeacherList
                             teacherList={teacherList.slice(0, 6)}
                         ></TeacherList>
