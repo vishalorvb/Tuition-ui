@@ -1,0 +1,14 @@
+.gradient-border {
+
+    border: 2px outset var(--DarkBlue);
+    border-radius: 5px;
+    display: inline-block;
+    padding: .2rem .7rem;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+.gradient-border:hover {
+    background-color: var(--DarkBlue);
+    color: white;
+}

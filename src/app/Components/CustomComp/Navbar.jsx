@@ -95,7 +95,10 @@ function Navbar() {
                                 }).map(nav =>
                                     <li
                                         key={nav.id}
-                                        onClick={() => setDrawer(false)}
+                                        onClick={() => {
+                                            router.push(nav.link)
+                                            setDrawer(false)
+                                        }}
                                     >
                                         <Link href={nav.link}>{nav.tag}</Link>
                                     </li>)}

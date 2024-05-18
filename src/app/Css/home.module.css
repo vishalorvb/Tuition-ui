@@ -51,4 +51,7 @@
     padding: 0.5rem;
 }
 
-.heading {}
+.bt {
+    margin: 2px;
+    padding: 4px;
+}

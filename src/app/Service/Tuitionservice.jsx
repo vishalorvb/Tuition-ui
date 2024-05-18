@@ -15,7 +15,7 @@ export async function searchTuition(queryString, pageNumber = 1) {
     return await axios.get(`${baseUrl}/tuition/search/${pageNumber}?query=${queryString}`).then(res => {
         return ({ opration: true, data: res.data.data, message: res.message })
     }).catch(err => {
-        return { opration: false, data: [], message: err.response.data.message }
+        return { opration: false, data: [], message: "Network error" }
     })
 }
 

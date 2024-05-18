@@ -60,7 +60,7 @@ export async function searchTeacher(queryString, pageNumber = 1) {
     return await axios.get(`${baseUrl}/teacher/search/${pageNumber}?query=${queryString}`).then(res => {
         return ({ opration: true, data: res.data.data, message: res.message })
     }).catch(err => {
-        return { opration: false, data: [], message: err.response.data.message }
+        return { opration: false, data: [], message: "Network Error" }
     })
 }
 

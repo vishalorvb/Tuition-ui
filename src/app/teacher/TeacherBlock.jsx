@@ -10,7 +10,7 @@ import { searchTeacher } from "../Service/TeacherService"
 function TeacherBlock({ initialTeacherList, redirectUrl }) {
 
     const [teacher, setTeacher] = useState(initialTeacherList)
-    const cityUrl = "teacher/online-tuition/"
+    const cityUrl = "/teacher/online-tuition/"
 
 
     function handleSearch(words) {

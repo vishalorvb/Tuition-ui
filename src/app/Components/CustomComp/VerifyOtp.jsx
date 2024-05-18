@@ -14,7 +14,6 @@ function VerifyOtp({ phone_number }) {
     const router = useRouter();
 
     function handleSignin(data) {
-        console.log(data)
         if (data.Full_name != undefined && data.access != undefined && data.roleId != undefined) {
             signIn('credentials', data)
         }

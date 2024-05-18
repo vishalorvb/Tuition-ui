@@ -6,6 +6,7 @@ import TuitionList from '@/app/teacher-job/TuitionList'
 import styles from '../../../Css/home.module.css'
 import TeacherList from '@/app/teacher/TeacherList'
 import { lastestTeacher } from '@/app/Service/TeacherService'
+import HomeButton from '../../MiniComp/HomeButton'
 
 
 async function Home() {
@@ -15,6 +16,34 @@ async function Home() {
     return (
         <div>
             <Carousel></Carousel>
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-8">
+                        <div className="row justify-content-center">
+                            <div className="col-6 ">
+                                <div className={styles.bt}>
+                                    <HomeButton></HomeButton>
+                                </div>
+                            </div>
+                            <div className="col-6">
+                                <div className={styles.bt}>
+                                    <HomeButton></HomeButton>
+                                </div>
+                            </div>
+                            <div className="col-6">
+                                <div className={styles.bt}>
+                                    <HomeButton></HomeButton>
+                                </div>
+                            </div>
+                            <div className="col-6">
+                                <div className={styles.bt}>
+                                    <HomeButton></HomeButton>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <Display
                 url='/beacome-teacher'
                 imageUrl="/teacherdisplay.jpg"
