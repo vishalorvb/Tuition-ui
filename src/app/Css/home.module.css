@@ -55,3 +55,8 @@
     margin: 2px;
     padding: 4px;
 }
+
+.bt a {
+    text-decoration: none;
+    color: inherit;
+}

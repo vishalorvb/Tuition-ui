@@ -23,19 +23,19 @@ function Carousel() {
             </div>
 
             <div className={styles.content}>
-                <Grid container spacing={2} justifyContent="center">
-                    <Grid item md={6} xs={12}>
-                        <h1> <strong>Find <Typing list={list} duration={200} ></Typing></strong> </h1>
-                        <p>Discover the Perfect Tutor for Your Learning Journey</p>
-                        <div className={styles.btn}>
-                            <TranparentButton
-                                onClick={e => router.push("/registration")}
-                            >Get Started</TranparentButton>
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-6">
+                            <h1> <strong>Find <Typing list={list} duration={200} ></Typing></strong> </h1>
+                            <p>Discover the Perfect Tutor for Your Learning Journey</p>
+                            <div className={styles.btn}>
+                                <TranparentButton
+                                    onClick={e => router.push("/registration")}
+                                >Get Started</TranparentButton>
+                            </div>
                         </div>
-
-                    </Grid>
-                </Grid>
-
+                    </div>
+                </div>
             </div>
 
         </div>

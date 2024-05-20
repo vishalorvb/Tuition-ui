@@ -31,9 +31,9 @@ function Typing({ duration, list }) {
     }, [charIndex, isDeleting, list, duration, index]);
 
     return (
-        <div>
+        <>
             {display}
-        </div>
+        </>
     );
 }
 

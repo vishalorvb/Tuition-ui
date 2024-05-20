@@ -7,6 +7,7 @@ import styles from '../../../Css/home.module.css'
 import TeacherList from '@/app/teacher/TeacherList'
 import { lastestTeacher } from '@/app/Service/TeacherService'
 import HomeButton from '../../MiniComp/HomeButton'
+import Link from 'next/link'
 
 
 async function Home() {
@@ -22,22 +23,22 @@ async function Home() {
                         <div className="row justify-content-center">
                             <div className="col-6 ">
                                 <div className={styles.bt}>
-                                    <HomeButton></HomeButton>
+                                    <HomeButton><Link href="/home-tuition">Post Tuition</Link></HomeButton>
                                 </div>
                             </div>
                             <div className="col-6">
                                 <div className={styles.bt}>
-                                    <HomeButton></HomeButton>
+                                    <HomeButton><Link href="/teacher"> &nbsp; &nbsp;Find  &nbsp; Teacher &nbsp; &nbsp;</Link></HomeButton>
                                 </div>
                             </div>
                             <div className="col-6">
                                 <div className={styles.bt}>
-                                    <HomeButton></HomeButton>
+                                    <HomeButton><Link href="/teacher-job">Find Tuition</Link></HomeButton>
                                 </div>
                             </div>
                             <div className="col-6">
                                 <div className={styles.bt}>
-                                    <HomeButton></HomeButton>
+                                    <HomeButton><Link href="join_teacher">Beacome Teacher</Link></HomeButton>
                                 </div>
                             </div>
                         </div>
