@@ -1,8 +1,7 @@
 import Header from '@/app/Components/CustomComp/Header';
 import TeacherDetails from '@/app/Components/CustomComp/TeacherDetails';
 import { getTeacherDetails, searchTeacher } from '@/app/Service/TeacherService';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import { getServerSession } from 'next-auth';
+
 import React from 'react'
 import RelatedTeacher from './RelatedTeacher';
 
@@ -11,8 +10,8 @@ async function page({ params }) {
     const encodedString = params.teacherslug[0];
     const slug = decodeURIComponent(encodedString).replace("-", " ");
 
-    const session = await getServerSession(authOptions);
-    const token = session?.access_token ?? null
+   
+    const token = "jwt token"
     const teacherId = params.teacherslug[1]
     const teacher = await getTeacherDetails(teacherId, token)
     let relatedTeacher;

@@ -3,8 +3,6 @@ import Profile from '../Components/CustomComp/Profile'
 import Card from "../Components/CustomComp/Card"
 import PostTable from '../Components/CustomComp/PostTable'
 import { redirect } from 'next/navigation';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../api/auth/[...nextauth]/route';
 import { getMypost, getunlockedTuition } from '../Service/Tuitionservice';
 import { getunlockedTeacher } from '../Service/TeacherService';
 import { getUserinfo } from '../Service/Userservice';
@@ -12,11 +10,8 @@ import TuitionUnlockTable from '../Components/CustomComp/TuitionUnlockTable';
 import TeacherUnlockTable from '../Components/CustomComp/TeacherUnlockTable';
 
 async function page() {
-    const session = await getServerSession(authOptions);
-    if (session === null) {
-        redirect("/login");
-    }
-    const token = session.access_token
+
+    const token = "jwt token"
     const postedTuition = await getMypost(token)
     const unlockedTuition = await getunlockedTuition(token)
     const unlockedTeacher = await getunlockedTeacher(token)

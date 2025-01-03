@@ -76,7 +76,7 @@ export async function getunlockedTeacher(token) {
 }
 
 export async function createTeacher(data, token) {
-    console.log(data)
+
     return await axios({
         method: 'post',
         data: data,

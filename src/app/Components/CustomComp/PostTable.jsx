@@ -4,7 +4,7 @@ import styles from "../../Css/Table.module.css"
 import CallIcon from '@mui/icons-material/Call';
 import Link from "next/link";
 import Button from "../MiniComp/Button";
-import { useSession } from "next-auth/react";
+
 import { changeStatus } from "@/app/Service/Tuitionservice";
 import useGlobal from "../Hooks/useGlobal";
 
@@ -12,9 +12,9 @@ function PostTable({ tuitionList }) {
 
     const [tuition, setTuition] = useState(tuitionList)
     const { setSnackbarData } = useGlobal();
-    let data = useSession()
+    
 
-    let token = data?.data?.access_token
+    let token = "jwt token"
     function handleStatuschange(tuitionId) {
         changeStatus(tuitionId, token).then(res => {
             if (res.status) {

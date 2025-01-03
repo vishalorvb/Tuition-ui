@@ -1,11 +1,11 @@
 "use client"
 
-import { useSession } from "next-auth/react"
+
 import Login from "../Components/PageComp/Login"
 import WaveSkeleton from "../Components/CustomComp/WaveSkeleton"
 function Loginpage() {
 
-    let { status } = useSession()
+    let  status  = 'login data'
    
     return (
         <div>

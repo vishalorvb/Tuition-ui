@@ -5,7 +5,7 @@ import Navbar from './Components/CustomComp/Navbar'
 import Footer from './Components/CustomComp/Footer'
 import GlobalContextProvider from './Components/Context/GlobalContextProvider'
 import GlobalSnackBar from './Components/CustomComp/GloabalSnackBar'
-import NextAuthSessionProvider from './Components/Context/NextAuthSessionProvider'
+
 
 
 export const metadata = {
@@ -19,12 +19,12 @@ export default function RootLayout({ children }) {
             <link rel="icon" href="/flag.png" type='image/x-icon' sizes="any" />
             <body >
                 <GlobalContextProvider>
-                    <NextAuthSessionProvider>
+                
                         <Navbar></Navbar>
                         {children}
                         <Footer></Footer>
                         <GlobalSnackBar></GlobalSnackBar>
-                    </NextAuthSessionProvider>
+                   
                 </GlobalContextProvider>
 
             </body>

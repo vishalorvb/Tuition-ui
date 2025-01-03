@@ -3,7 +3,7 @@
 import Link from "next/link"
 import UploadButton from "./UploadButton"
 import { useRef, useState } from "react";
-import { useSession } from "next-auth/react";
+
 import { updateUser } from "@/app/Service/Userservice";
 import useGlobal from "../Hooks/useGlobal";
 import { useRouter } from "next/navigation";
@@ -13,7 +13,7 @@ function EditProfile({ userInfo }) {
     const router = useRouter()
     const [selectedImage, setSelectedImage] = useState(userInfo?.profilepic);
     const [imageFile, setImagefile] = useState(null)
-    const { data } = useSession()
+    
     const f = useRef()
     function handleSubmit(e) {
         e.preventDefault()
@@ -21,7 +21,7 @@ function EditProfile({ userInfo }) {
         if (imageFile != null) {
             payload.append('photo', imageFile);
         }
-        updateUser(payload, data.access_token).then(res => {
+        updateUser(payload, "jwt_token").then(res => {
             if (res.status) {
                 setSnackbarData({
                     status: true,

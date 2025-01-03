@@ -2,14 +2,14 @@
 import { useState } from 'react';
 import styles from '../../Css/tuitionunlockbtn.module.css'
 import CallIcon from '@mui/icons-material/Call';
-import { useSession } from 'next-auth/react';
+
 import { redirect, useRouter } from "next/navigation";
 import useGlobal from '../Hooks/useGlobal';
 import { unlockTeacher } from '@/app/Service/TeacherService';
 
 function TeacherUnlockbtn({ phoneNumber, teacherId }) {
     const [phone, setPhone] = useState(phoneNumber)
-    let data = useSession()
+    let data ="jwt token"
     const { setSnackbarData } = useGlobal()
     const router = useRouter();
 

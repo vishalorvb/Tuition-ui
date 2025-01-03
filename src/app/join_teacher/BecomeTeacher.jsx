@@ -3,7 +3,7 @@ import { Autocomplete } from '@mui/material'
 import styles from "../Css/form.module.css"
 import { useRef, useState } from 'react'
 import { getPin } from '../Service'
-import { useSession } from 'next-auth/react'
+
 import { useRouter } from "next/navigation"
 import useGlobal from '../Components/Hooks/useGlobal'
 import FormPage from '../Components/CustomComp/FormPage'
@@ -30,7 +30,7 @@ function BecomeTeacher({ teacherInfo }) {
         "Enhance Your Teaching Skills",
     ]
 
-    const { data } = useSession()
+    const  data  = "login data"
     const { setSnackbarData } = useGlobal();
     const router = useRouter()
 

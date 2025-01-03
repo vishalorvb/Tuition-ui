@@ -7,7 +7,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button, IconButton } from '@mui/material';
 import { Drawer } from '@mui/material'
-import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
 
@@ -15,8 +14,7 @@ import { useRouter } from 'next/navigation';
 function Navbar() {
 
     const [drawer, setDrawer] = useState(false)
-    let { status } = useSession()
-    let data = useSession()
+    const data = "login data"
     const router = useRouter();
     //{
     //    1: always

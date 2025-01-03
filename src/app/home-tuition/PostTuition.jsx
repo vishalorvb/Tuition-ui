@@ -4,7 +4,7 @@ import styles from "../Css/form.module.css"
 import FormPage from "../Components/CustomComp/FormPage"
 import { getPin, postTuition } from "../Service"
 import { useRef, useState } from "react"
-import { useSession } from "next-auth/react"
+
 import { useRouter } from "next/navigation"
 import useGlobal from "../Components/Hooks/useGlobal"
 
@@ -29,7 +29,7 @@ function PostTuition() {
     const [selectedpin, setSelectedPin] = useState(0)
     const [online, setOnline] = useState(true)
 
-    const { data } = useSession()
+
     const { setSnackbarData } = useGlobal();
     const router = useRouter()
     const f = useRef()
@@ -46,7 +46,7 @@ function PostTuition() {
             })
             return
         }
-        postTuition(payload, data?.access_token).then(res => {
+        postTuition(payload, 'jwt_token').then(res => {
             if (res.opration) {
                 setSnackbarData({
                     status: true,

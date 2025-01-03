@@ -1,8 +1,7 @@
 import TuitionDetails from "@/app/Components/CustomComp/TuitionDetails"
 import { getTuitionDetails, searchTuition } from "@/app/Service/Tuitionservice"
 import RelatedTuitionList from "./RelatedTuitionList";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+
 import Header from "@/app/Components/CustomComp/Header";
 
 async function page({ params }) {
@@ -10,8 +9,8 @@ async function page({ params }) {
     const encodedString = params.tuitionslug[0];
     const slug = decodeURIComponent(encodedString).replace("-", " ");
 
-    const session = await getServerSession(authOptions);
-    const token = session?.access_token ?? null
+   
+    const token = "jwt token"
 
     const tutionId = params.tuitionslug[1]
     const tution = await getTuitionDetails(tutionId, token)
