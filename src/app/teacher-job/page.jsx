@@ -6,6 +6,7 @@ import TuitionBlock from './TuitionBlock';
 async function Page() {
     let t = await getLatestTuition()
     let tuition = t.data
+    console.log(tuition)
     return (
         <div className='container'>
             <TuitionBlock

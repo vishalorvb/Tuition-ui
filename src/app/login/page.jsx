@@ -6,11 +6,11 @@ import { redirect } from "next/navigation";
 import { metadata } from '../layout';
 
 async function page() {
-    const session = await getServerSession(authOptions)
-    metadata.title = "Login"
-    if (session !== null) {
-        redirect("/profile");
-    }
+    // const session = await getServerSession(authOptions)
+    // metadata.title = "Login"
+    // if (session !== null) {
+    //     redirect("/profile");
+    // }
     return (
         <div>
             <Loginpage></Loginpage>

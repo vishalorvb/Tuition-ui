@@ -1,13 +1,14 @@
 import axios from "axios";
 import { ApiUrl as BU } from "@/Environment";
-const baseUrl = "http://localhost:8000"
+const baseUrl = "http://127.0.0.1:8000"
 
 
 export async function getLatestTuition(pageNumber = 1) {
     return await axios.get(`${baseUrl}/tuition/getLatesttuition/${pageNumber}`).then(res => {
-        return ({ opration: true, data: res.data.data, message: res.message })
+        return ({ operation: true, data: res.data.data, message: res.message })
     }).catch(err => {
-        return { opration: false, data: [], message: err.message }
+        console.log(err)
+        return { operation: false, data: [], message: err.message }
     })
 }
 

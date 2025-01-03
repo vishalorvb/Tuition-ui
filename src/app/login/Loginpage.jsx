@@ -6,6 +6,7 @@ import WaveSkeleton from "../Components/CustomComp/WaveSkeleton"
 function Loginpage() {
 
     let { status } = useSession()
+   
     return (
         <div>
             {status == "loading" && <div>
